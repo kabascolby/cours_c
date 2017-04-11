@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 21:45:01 by lkaba             #+#    #+#             */
-/*   Updated: 2017/04/09 18:14:33 by nwang            ###   ########.fr       */
+/*   Updated: 2017/04/09 18:16:22 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,29 @@ void	ft_putchar(char c);
 void	line2(int ix, int x)
 {
 	if (ix == 1 || ix == x)
-		ft_putchar('B');
+		ft_putchar('*');
 	else
 		ft_putchar(' ');
 }
 
 void	line3(int ix, int x)
 {
-	if (ix == 1 || ix == x)
-		ft_putchar('C');
+	if (ix == 1)
+		ft_putchar('\\');
+	else if (ix == x)
+		ft_putchar('/');
 	else
-		ft_putchar('B');
+		ft_putchar('*');
 }
 
 void	line1(int ix, int x)
 {
-	if (ix == 1 || ix == x)
-		ft_putchar('A');
+	if (ix == 1)
+		ft_putchar('/');
+	else if (ix == x)
+		ft_putchar('\\');
 	else
-		ft_putchar('B');
+		ft_putchar('*');
 }
 
 void	rush(int x, int y)

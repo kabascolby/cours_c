@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 21:45:01 by lkaba             #+#    #+#             */
-/*   Updated: 2017/04/09 18:14:33 by nwang            ###   ########.fr       */
+/*   Updated: 2017/04/09 18:33:33 by nwang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	line2(int ix, int x)
 
 void	line3(int ix, int x)
 {
-	if (ix == 1 || ix == x)
+	if (ix == 1)
+		ft_putchar('A');
+	else if (ix == x)
 		ft_putchar('C');
 	else
 		ft_putchar('B');
@@ -30,8 +32,10 @@ void	line3(int ix, int x)
 
 void	line1(int ix, int x)
 {
-	if (ix == 1 || ix == x)
+	if (ix == 1)
 		ft_putchar('A');
+	else if (ix == x)
+		ft_putchar('C');
 	else
 		ft_putchar('B');
 }
