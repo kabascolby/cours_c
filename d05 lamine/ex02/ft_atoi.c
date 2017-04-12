@@ -24,3 +24,14 @@
 		value = -value;
 	return (value);
 }
+
+#include <stdio.h>
+
+int main()
+{
+	int i;
+
+	i = ft_atoi("-2");
+	printf("%d", i);
+	return 0;
+}

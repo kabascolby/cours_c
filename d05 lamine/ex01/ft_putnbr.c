@@ -1,6 +1,10 @@
 #include <unistd.h>
 
 int		ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
+}
 
 void	ft_putnbr(int nb)
 {
@@ -23,4 +27,11 @@ void	ft_putnbr(int nb)
 		i %= size;
 		size /= 10;
 	}
+}
+
+int main()
+{
+	ft_putnbr(425755);
+	return 0;
+
 }
