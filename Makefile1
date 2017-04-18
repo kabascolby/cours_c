@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-TEXT = "Lamine apprend de plus en plus vite à 42"
-
 regle_a:
-	echo $(TEXT)
+	echo "regle A"
+
+regle_b: regle_a
+	echo "regle B"
