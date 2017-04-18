@@ -3,12 +3,12 @@
 #include <stdlib.h>
 int  factorielle (n)
 {
-    int a;
-    int i;
-    a = 1;
-
-    if (n <= 12 && n > 0)
+    
+    if (n <= 12 && n >= 0)
     {
+        int a;
+        int i;
+        a = 1;
         for (i=1; i <= n; i++)
         {
             a *= i;
@@ -19,12 +19,12 @@ int  factorielle (n)
     }
     else
         {
-            printf("la factorielle doit etre suprieure ou egale a 12");
+            printf("la factorielle doit etre suprieure ou egale a 12\n");
             return (0);
         }
 }
 int main(int argc, char *argv[])
 {
-    factorielle(12);
+    factorielle(4);
     return(0);
 }
