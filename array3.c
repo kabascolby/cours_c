@@ -1,38 +1,40 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #define RC printf("\n")
 
 int     factorielle (m)
 {
-    
-    if (m <= 12 && m >= 0)
+    if(m <= 12 && m >= 0)
     {
         int a;
         int i;
+
         a = 1;
         i = 1;
-        while(i <= m)
+        while ( i <= m)
         {
             a *= i;
+            printf("%d: ", a);
+            RC;
             i++;
-
         }
-       // printf("%d\n", a);  
+        printf("%d: ", a);
+        RC;
         return a;
     }
     else
         {
-            printf("la factorielle doit etre suprieure ou egale a 12\n");
-            return (0);
+            printf("le nombre doit etre de 0 à 12");
+            return(0);
         }
 }
 
-void print_array(int* T, int len)
+void array_display(int* T, int len)
 {
     int i;
     
     i = 0;
-    while(i < len)
+    while( i < len)
     {
         printf("%d |", T[i]);
         i++;
@@ -41,28 +43,26 @@ void print_array(int* T, int len)
 
 int main(int argc, char *argv[])
 {
-    int* T;
-    int i;
     int n;
+    int* T;
+
+    int i;
     i = 0;
-    printf("Combien de cases voulez vous dans votre tableau: ");
+    printf("entrer la longeur du tableau (1..12)");
     scanf("%d", &n);
-    RC;
-    while((n < 1) || (n > 12))
+    
+    while(( n < 1) || (n > 13))
     {
-        printf("Entrez une valeur entre 1 et 12: ");
+        printf("la longeur du tableau doit etre de 1 a 13");
         scanf("%d", &n);
-        RC;
     }
     T = malloc(n * 4);
-    while (i < n)
+    while (i > n)
     {
-        T[i]= factorielle(i);
+        T[i] = factorielle(i);
         i++;
     }
-
-    print_array(T, n);
-    RC;
+    array_display(T, n);
     free(T);
     return (0);
 }
