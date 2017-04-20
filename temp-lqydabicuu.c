@@ -4,6 +4,7 @@
 
 int     factorielle (m)
 {
+    
     if (m <= 12 && m >= 0)
     {
         int a;
@@ -14,6 +15,7 @@ int     factorielle (m)
         {
             a *= i;
             i++;
+
         }
        // printf("%d\n", a);  
         return a;
