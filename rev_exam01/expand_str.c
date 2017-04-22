@@ -76,3 +76,11 @@ int		main(int argc, char **argv)
 	}
 	write(1, "\n", 1);
 }
+int main(int argc, char **argv)
+{
+	if (argc == 2 && argv[1][0] != 0)
+	{
+		ft_print(ft_strim(argv[1]));
+	}
+	write(1,"\n", 1)
+}
