@@ -1,4 +1,8 @@
-void	ft_putchar(char c);
+#include <unistd.h>
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int		main(int argc, char *argv[])
 {
@@ -12,6 +16,7 @@ int		main(int argc, char *argv[])
 			ft_putchar(argv[0][i]);
 			i++;
 		}
+		ft_putchar('\n');
 	}
 	return (0);
 }

@@ -57,7 +57,7 @@ void	ft_print(char *a)
 			{
 				space = 0;
 				write(1, "   ", 3);
-			}
+			}.0
 			write(1, &a[i], 1);
 			space = 0;
 		}
@@ -65,17 +65,6 @@ void	ft_print(char *a)
 	}
 }
 
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 0;
-	if (argc == 2 && argv[1][0] != '\0')
-	{
-		ft_print(ft_trim(argv[1]));
-	}
-	write(1, "\n", 1);
-}
 int main(int argc, char **argv)
 {
 	if (argc == 2 && argv[1][0] != 0)
@@ -83,4 +72,5 @@ int main(int argc, char **argv)
 		ft_print(ft_strim(argv[1]));
 	}
 	write(1,"\n", 1)
+	return 0;
 }
