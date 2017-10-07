@@ -1,14 +1,46 @@
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+int		ft_putchar(char c)
 {
-    char c;
-    if(nb > 0)
-    {
-        ft_putnbr(nb / 10 );
-        c = nb % 10 + '0'; 
-        write (1, &c, 1);
-    }
+	write(1, &c, 1);
+	return (0);
+}
+int ft_putstr(char *str)
+{
+	while(*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+	return 0;
+}
+
+void	ft_putnbr(int nb)
+{
+	int	i;
+	int	size;
+
+	size = 1;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if(nb == -2147483648)
+	{
+		ft_putstr("2147483648");
+		return;
+	}
+	i = nb;
+	while ((i /= 10) > 0)
+		size *= 10;
+	i = nb;
+	while (size)
+	{
+		ft_putchar((char)((i / size)) + 48);
+		i %= size;
+		size /= 10;
+	}
 }
 
 int ft_atoi(char *str)

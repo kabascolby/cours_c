@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	add = &b;
 	ft_putaddr(add);
 	write(1, "\n", 1);
-	ft_putaddr(*b);
+	ft_putaddr();
 	
 	return 0;
 }
