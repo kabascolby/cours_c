@@ -61,9 +61,9 @@ int main()
     toto = 5;
     tata = 8;
     titi = 'A';
-    ft_putnbr(toto)
+    ft_putnbr(toto);
     ft_putchar(' ');
     ft_putnbr(tata);
-    ft_putchar(titi' ');
+    ft_putchar(titi);
     return 0;
 }

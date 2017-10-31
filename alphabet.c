@@ -9,6 +9,13 @@ void ft_alphabet()
 {
     char tutu;
     tutu = 65 ;
+    while (tutu <= 'Z')
+    {
+        ft_putchar(tutu);
+        ft_putchar(' ');
+        tutu = tutu + 1;
+    }
+    tutu = 97;
     while (tutu <= 'z')
     {
         ft_putchar(tutu);
