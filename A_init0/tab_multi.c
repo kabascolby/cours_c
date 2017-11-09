@@ -42,17 +42,26 @@ int main()
         int i, j;
         i = 1;
         
-        while ( i < 11)
+        while ( i < 21)
         {
+			ft_putstr("table de multiplication par ");
+			if(i < 10)
+				ft_putstr(" ");
+			ft_putnbr(i);
+			ft_putchar(':');
             j = 1;
             while(j < 11)
             {
-                ft_putnbr(j * i);
+               
                 if( (i * j) < 10)
-                    ft_putstr("  ");
+                    ft_putstr("   ");
                 else if( (i * j) < 100)
-                    ft_putstr(" ");
-                j++;
+					ft_putstr("  ");
+					else
+					ft_putstr(" ");
+				ft_putnbr(j * i);
+				j++;
+				
             }
             ft_putchar('\n');
             i++;
