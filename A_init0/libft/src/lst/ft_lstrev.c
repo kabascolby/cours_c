@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_lstrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:12:12 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:12:13 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+void		ft_lstrev(t_list **alst)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	t_list	*prev;
+	t_list	*cur;
+	t_list	*next;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	prev = NULL;
+	cur = *alst;
+	while (cur != NULL)
+	{
+		next = cur->next;
+		cur->next = prev;
+		prev = cur;
+		cur = next;
+	}
+	*alst = prev;
 }

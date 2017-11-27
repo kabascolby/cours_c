@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_splitdel.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:04:38 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:04:39 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+int	ft_splitdel(char ***split)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	char	**str;
+	int		i;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	i = 0;
+	str = *split;
+	while (*str)
+	{
+		ft_strdel(str);
+		i++;
+		str = &(*split)[i];
+	}
+	ft_memdel((void **)split);
+	return (0);
 }

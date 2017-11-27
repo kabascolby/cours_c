@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:07:26 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:07:27 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+#include <string.h>
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+char	*ft_strtrim(char const *s)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	size_t	start;
+	size_t	end;
+	char	*new;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	start = 0;
+	end = ft_strlen(s);
+	while (ft_iswhitespace(s[start]))
+		start++;
+	while (ft_iswhitespace(s[end - 1]))
+		end--;
+	if (end < start)
+		end = start;
+	new = ft_strnew(end - start);
+	if (new == NULL)
+		return (NULL);
+	return (ft_strncpy(new, s + start, end - start));
 }

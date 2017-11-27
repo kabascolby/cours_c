@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_countwords.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:12:22 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:12:23 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "string.h"
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+int		ft_countwords(char *str, char sep)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	int result;
+	int i;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	i = 0;
+	result = 0;
+	while (str[i] && str[i] == sep)
+		i++;
+	while (str[i])
+	{
+		while (str[i] && str[i] != sep)
+			i++;
+		result++;
+		while (str[i] && str[i] == sep)
+			i++;
+	}
+	return (result);
 }

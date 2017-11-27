@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:05:45 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:05:46 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+#include <string.h>
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	char *str;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	str = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (str == NULL)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }

@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:06:46 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:06:47 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
+#include <string.h>
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	size_t i;
+	size_t j;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
-}
-
-void decoupeminute(int *heures, int *minutes)
-{
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	if (*s2 == '\0')
+		return ((char *)s1);
+	i = 0;
+	while (s1[i] && i < n)
+	{
+		j = 0;
+		while (s1[i + j] && i + j < n && s2[j] && s1[i + j] == s2[j])
+			j++;
+		if (s2[j] == '\0')
+			return ((char *)(s1 + i));
+		i++;
+	}
+	return (NULL);
 }

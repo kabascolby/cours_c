@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:08:38 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:08:39 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+inline static void	putlong(long n, int fd)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
-
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
+	if (n >= 10)
+		putlong(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
 }
 
-void decoupeminute(int *heures, int *minutes)
+void				ft_putnbr_fd(int n, int fd)
 {
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	long	v;
+
+	v = n;
+	if (v < 0)
+	{
+		ft_putchar_fd('-', fd);
+		v = -v;
+	}
+	putlong(v, fd);
 }

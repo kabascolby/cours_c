@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   decoupe_min.c                                      :+:      :+:    :+:   */
+/*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:02:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:02:21 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/22 16:12:07 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/22 16:12:08 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void decoupeminute(int *heures, int *minutes);
-
-int main()
+static t_list	*remove(t_list *lst, void *ptr)
 {
-    int H;
-    int M;
-    H = 0;
-    M = 90;
-    decoupeminute(&H, &M);
+	t_list *temp;
 
-   // printf("%d heures %d minutes", H, M);
-
-    return 0;
+	if (!lst)
+		return (NULL);
+	if (lst->content == ptr)
+	{
+		temp = lst->next;
+		ft_memdel((void **)&lst);
+		return (temp);
+	}
+	lst->next = remove(lst->next, ptr);
+	return (lst);
 }
 
-void decoupeminute(int *heures, int *minutes)
+/*
+** Removes a single node from a linked list.
+*/
+
+void			ft_lstremove(t_list **lst, void *ptr)
 {
-    *heures = *minutes / 60;
-    *minutes = *minutes % 60;
-    printf("%d heures %d minutes\n", *heures, *minutes);
+	*lst = remove(*lst, ptr);
 }
