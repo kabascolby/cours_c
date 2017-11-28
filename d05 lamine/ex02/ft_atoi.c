@@ -31,7 +31,7 @@ int main()
 {
 	int i;
 
-	i = ft_atoi("-2");
+	i = ft_atoi("-0");
 	printf("%d", i);
 	return 0;
 }
