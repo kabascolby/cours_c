@@ -6,13 +6,13 @@
 #    By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 13:27:47 by lkaba             #+#    #+#              #
-#    Updated: 2017/11/30 13:28:09 by lkaba            ###   ########.fr        #
+#    Updated: 2017/11/30 14:08:16 by lkaba            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include libft.mk
 
-SRC_DIR	= ./src
+SRC_DIR	= ./sources
 INC_DIR	= ./includes
 OBJ_DIR	= ./obj
 
@@ -24,9 +24,6 @@ OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -pedantic -std=c99
-CFLAGS += -O3 -march=native -pipe -flto
-
-.PHONY: all clean fclean re
 
 all: $(OBJ_DIR) $(FT_NAME)
 
