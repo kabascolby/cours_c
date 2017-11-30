@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/30 13:33:59 by lkaba             #+#    #+#             */
+/*   Updated: 2017/11/30 13:34:12 by lkaba            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
@@ -78,8 +90,4 @@ int				ft_max(int a, int b);
 int				ft_abs(int i);
 int				ft_iswhitespace(char c);
 int				ft_countwords(char *str, char c);
-double			ft_lerp(double first, double second, double p);
-double			ft_ilerp(double val, double first, double second);
-int				ft_lerpi(int first, int second, double p);
-float			ft_clamp(float i, float a, float b);
 #endif
