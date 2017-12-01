@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:09:33 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:09:34 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/11/30 18:58:34 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_memdel(void **ap)
+void    ft_memdel(void **ap)
 {
-	free(*ap);
-	*ap = (NULL);
+  if (*ap)
+    free(*ap);
+  *ap = NULL;
 }

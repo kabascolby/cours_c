@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *c, void (*f)(char *))
+void    ft_striter(char *c, void (*f)(char *))
 {
-	while (*c)
-	{
-		(*f)(c);
-		c++;
-	}
+    while (*c)
+    {
+        (*f)(c);
+        c++;
+    }
 }
