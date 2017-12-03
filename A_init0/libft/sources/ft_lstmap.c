@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:11:58 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:11:59 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/01 19:55:45 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	cleanup(t_list *lst)
 {
-	t_list	*tmp;
+	t_list *tmp;
 
 	while (lst)
 	{

@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:05:23 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:05:24 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/01 20:00:31 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-    if (as != NULL && *as != NULL)
-      ft_memdel((void **)as);
+	if (as != NULL && *as != NULL)
+		ft_memdel((void **)as);
 }

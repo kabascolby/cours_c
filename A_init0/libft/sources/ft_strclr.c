@@ -6,13 +6,15 @@
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:04:56 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:05:04 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/01 22:23:26 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_strclr(char *as)
 {
-	while (*as)
+	while (*as && as != NULL)
 	{
 		*as = 0;
 		as++;
