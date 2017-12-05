@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:07:12 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:07:14 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/04 17:23:17 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ char		**ft_strsplit(char const *s, char c)
 	char	*start;
 	char	**result;
 
-	words = count_words((char *)s, c);
 	if (!s || !c)
 		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (count_words((char *)s, c) + 1));
+	words = count_words((char *)s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
+		return (NULL);
 	start = (char *)s;
 	while (*s)
 	{

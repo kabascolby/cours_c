@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:06:03 by lkaba             #+#    #+#             */
-/*   Updated: 2017/12/01 20:17:49 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/04 18:23:03 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!s || !f)
 		return (NULL);
 	fresh = ft_strnew(ft_strlen(s));
+	if (fresh == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
