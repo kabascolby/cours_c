@@ -75,7 +75,7 @@ int main(void)
 {
 	int 	n;
 	int 	*ptr;
-	int 	***ptr2;
+	int 	**ptr2;
 	int 	***ptr3;
 	int 	****ptr4;
 	int 	*****ptr5;
@@ -95,11 +95,11 @@ int main(void)
 	ptr9 = &ptr8;
 	n = 56;
 
-	ft_ultimate_ft(ptr);
+	ft_ultimate_ft(ptr9);
 
 
-
-	ft_putnbr(n);
+	
+	ft_putnbr(**ptr2);
 
 	/*int tab[10];
 	int tab2[10];
@@ -111,6 +111,5 @@ int main(void)
 	ft_putnbr(tab[3]);
 	ft_putchar('\n');
 //	ft_putnbr(tab[3]);*/
-	A
 	return (0);
 }
