@@ -1,0 +1,83 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_debut.txt                                       :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/12/09 08:02:41 by lkaba             #+#    #+#              #
+#    Updated: 2017/12/09 08:02:41 by lkaba            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+1. In the most concise way possible, answer this question, what is 42? How would
+you describe 42 to someone who doesn’t know what 42 is?
+
+the way I used to describe 42 when I meet meet people about 42. I told them
+42 is a tuition-free p2p learning environment verry unique and amazing. Because
+you learn in few time what you suppose to learn in other regular school in one 
+year or more. With 42, programming become clear as a water.
+
+2. Why are there no instructions on the initial 42 logic tests?
+
+There are no instructions on the 42 logic tests because its checking how you
+solve problem by yourself. Most of the problem have many solutions. Students 
+usually give the same solution of their teacher. But if you find the solution
+yourself you will in any situation you will find a way to fix it. 42 help you
+break the barrier of impossible to possible.
+
+3. What are the core 42 principles?
+Be a person who will give back as much as you get from the community. Be peace
+and respectfull. Eat code drink code and sleep code.
+
+4. If somebody is thinking of going to 42, but has no coding experience - do you
+really think it’s worth their time?
+
+Of course! As I've stated above, 42 is about so much more than coding. To be honest
+it litle bit difficult for the beginner but if you focus you can do it. Difficul 
+doesn’t mean impossible you just have to work hard.
+
+
+5. What makes 42 unique?
+Everithing. We are a community of self driven programmers. 42 is tuition free. Our p2p
+learning environment and gamified project structure.
+
+6. What do you think you’re learning the most at 42?
+
+Dealing with time creep and interpersonal skills. It's important to be unafraid
+to ask questions and admit when you don't know something. team work. Sahring knoledge.
+Being able to explain your work to someone who knows less It's equally as important to
+be able to defend your work against those who know more than you, and learn how you
+can improve.
+
+7. Imagine (this will happen very soon in real life!), you’ve been stuck on the
+problem for a while and have no idea what to do - what your next steps would be?
+
+Check to see if there is a man page, try to solve the problem with that or ask google
+or friends.
+
+8. How will you ensure that your personal level of motivation remains high on a
+daily basis to complete at least 1 level per month without the Piscine pressure
+and strict deadlines?
+
+Manage your time. avoid to many distraction be surronding with the student who progress,
+have a life balance is very important. Eating well, sleeping well, and set your goals.
+
+9. If someone asks you why it says internships are required on the 42 website, 
+but they do not offer job placement, what would you say?
+
+42 provides us with the tools to get a job, having a job depends on your skills and that
+not depends on 42.
+
+10. How do the internships work? Is it mandatory that you have to reach a 
+certain level before leaving on an internship or can you validate it anytime 
+you find one?
+
+Previously, it was required that a cadet be level seven and have completed
+a branch of the inner circle. My current understanding is that the first and the second
+internships is no longer a requirement.
+
+11. How does 42 help you adapt to a work place?
+
+42 teaches you impliment the good habits, to respect the deadlines, dealing with every body,
+and how to be verry professional.
