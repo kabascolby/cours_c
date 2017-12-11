@@ -19,9 +19,9 @@ int ft_strlen(char *str)
 }
 char *ft_strrev(char *str)
 {
-	int 	tmp;
+	char 	tmp;
 	int 	i;
-	int		size;
+	int 	size;
 
 	i = 0;
 	size = ft_strlen(str);
@@ -35,13 +35,32 @@ char *ft_strrev(char *str)
 	}
 	return (str);
 }
+/*
+char		*ft_strrev(char *str)
+{
+	int		i;
+	int		l;
+	int	t;
+
+	l = 0;
+	while (str[l] != '\0')
+		l++;
+	i = -1;
+	while (++i < --l)
+	{
+		t = str[i];
+		str[i] = str[l];
+		str[l] = t;
+	}
+	return (str);
+}*/
 
 int main (int argc, char **argv)
 {
 	if (argc == 2)
 		printf("%s\n", ft_strrev(argv[1]));
 	else
-		ft_putchar('\n');
+		//ft_putchar('\n');
 	return (0);
 } 
 
