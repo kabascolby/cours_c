@@ -4,10 +4,10 @@
 #                                                         :::      ::::::::    #
 #    find_nicolas_bomber.sh                             :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adespond <adespond@student.42.fr>          +#+  +:+       +#+         #
+#    By: lamkaba2 <lamkaba2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/09/11 02:02:31 by adespond          #+#    #+#              #
-#    Updated: 2015/09/11 02:02:31 by adespond         ###   ########.fr        #
+#    Created: 2015/09/11 02:02:31 by lamkaba2          #+#    #+#              #
+#    Updated: 2015/09/11 02:02:31 by lamkaba2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

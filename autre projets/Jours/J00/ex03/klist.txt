@@ -1,5 +1,5 @@
 Credentials cache: API:15190
-        Principal: adespond@42.FR
+        Principal: lamkaba2@42.FR
 
   Issued                Expires               Principal
 Sep  2 10:22:56 2015  Sep  2 20:22:56 2015  krbtgt/42.FR@42.FR

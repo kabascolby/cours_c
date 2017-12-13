@@ -4,10 +4,10 @@
 #                                                         :::      ::::::::    #
 #    libft_creator.sh                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: adespond <adespond@student.42.fr>          +#+  +:+       +#+         #
+#    By: lamkaba2 <lamkaba2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/09/09 09:56:48 by adespond          #+#    #+#              #
-#    Updated: 2015/09/09 09:56:48 by adespond         ###   ########.fr        #
+#    Created: 2015/09/09 09:56:48 by lamkaba2          #+#    #+#              #
+#    Updated: 2015/09/09 09:56:48 by lamkaba2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 gcc -Wall -Wextra -Werror -c ft_putchar.c ft_swap.c ft_putstr.c ft_strlen.c ft_strcmp.c
