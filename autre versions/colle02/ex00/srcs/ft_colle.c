@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_colle.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/07/20 22:19:06 by jpucelle          #+#    #+#             */
-/*   Updated: 2014/07/20 23:19:36 by rbufnoir         ###   ########.fr       */
-/*   Updated: 2014/07/20 23:20:23 by jpucelle         ###   ########.fr       */
+/*   Created: 2014/07/20 22:19:06 by lamkaba2          #+#    #+#             */
+/*   Updated: 2017/12/13 22:31:59 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 int		jp_colle00(char *str, char *cha)
 {

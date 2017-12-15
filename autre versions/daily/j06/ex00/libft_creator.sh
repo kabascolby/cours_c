@@ -4,10 +4,10 @@
 #                                                         :::      ::::::::    #
 #    libft_creator.sh                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+         #
+#    By: lamkaba2 <lamkaba2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/07/10 15:15:04 by jpucelle          #+#    #+#              #
-#    Updated: 2014/07/10 15:15:55 by jpucelle         ###   ########.fr        #
+#    Created: 2014/07/10 15:15:04 by lamkaba2          #+#    #+#              #
+#    Updated: 2014/07/10 15:15:55 by lamkaba2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

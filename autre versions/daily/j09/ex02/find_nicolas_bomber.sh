@@ -4,10 +4,10 @@
 #                                                         :::      ::::::::    #
 #    find_nicolas_bomber.sh                             :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+         #
+#    By: lamkaba2 <lamkaba2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/07/18 08:47:59 by jpucelle          #+#    #+#              #
-#    Updated: 2014/07/18 08:47:59 by jpucelle         ###   ########.fr        #
+#    Created: 2014/07/18 08:47:59 by lamkaba2          #+#    #+#              #
+#    Updated: 2014/07/18 08:47:59 by lamkaba2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
