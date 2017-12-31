@@ -1,0 +1,22 @@
+https://www.programiz.com/c-programming
+https://www.learn-c.org/en/Linked_lists
+http://fresh2refresh.com/c-programming/
+http://beginnersbook.com/2014/01/c-tutorial-for-beginners-with-examples/
+http://i.paysdu42.fr/?page=impatient-C
+http://www.zentut.com/c-tutorial/
+http://www.sanfoundry.com/c-program-linked-list-length-without-recursion/
+https://www.programiz.com/c-programming#should-you-learn-c
+http://denniskubes.com/2013/03/22/basics-of-function-pointers-in-c/
+
+
+http://www.java2s.com/Code/C/Function/Arrayoffunctionpointer.htm
+https://www.gnu.org/software/libc/manual/html_node/Argument-Macros.html#Argument-Macros
+https://www.gnu.org/software/libc/manual/html_node/Formatted-Output.html#Formatted-Output
+https://en.wikipedia.org/wiki/Variadic_function
+https://www.gnu.org/software/libc/manual/html_node/Variadic-Example.html
+https://linux.die.net/man/3/printf
+https://www.youtube.com/watch?v=moQ3Kr8ouiU&index=1&list=PLEH2kL-crMGHdf3J1Na1Gss-JEVfRenLt
+https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/printf.htm
+http://www.cplusplus.com/reference/cstdio/printf/
+
+https://github.com/SuperSpyTX/42-CheckYourDorms  dorms extension.

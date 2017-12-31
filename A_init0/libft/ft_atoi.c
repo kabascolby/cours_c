@@ -6,12 +6,11 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:03:02 by lkaba             #+#    #+#             */
-/*   Updated: 2017/12/19 12:48:54 by lkaba            ###   ########.fr       */
+/*   Updated: 2017/12/19 12:50:31 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include "unistd.h"
+#include "libft.h"
 
 int	ft_iswhitespace(int c)
 {
