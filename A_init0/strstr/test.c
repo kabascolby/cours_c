@@ -37,31 +37,38 @@ char *ft_strcat(char *dest, char *src)
     return (dest);
 }
 
-char		*ft_strstr(char *str, char *to_find)
+char *ft_strstr(char *str, char *to_find)
 {
-	char	*a;
-	char	*b;
+    int i;
+    int j;
+    int k;
+    char *str2;
 
-	b = to_find;
-	if (!*b)
-		return (str);
-	while (*str)
-	{
-		if (*str == *b)
-		{
-			a = str;
-			while (*a == *b || *b == '\0')
-			{
-				if (*b == '\0')
-					return (str);
-				a++;
-				b++;
-			}
-			b = to_find;
-		}
-		str++;
-	}
-	return (0);
+    if (ft_strlen(str) >= ft_strlen(to_find))
+    {
+       str2 = str;
+           i = 0;
+            k = 0;
+          j = 0;
+          l = 0;
+        while(str[i])
+        {
+           while(tofind[j] == str[i])
+            {
+                 if(tofind[j] == str[i])
+                    k++;
+                j++;
+            }
+            l = j;          
+            i++;
+            
+        }
+    }  
+    
+    if(j != ft_strlen(to_find))
+        return("(nulll)");
+    else
+        return(str);
 }
 
 int main()
@@ -70,14 +77,12 @@ int main()
     // char string2[] = "Ferry";
     // char string3[30];
     // char *string4 = "lamine";
-    char str[] = "dtWikipedia est tout";
-    char sub[] = "wikipedia";
-    
+    char str[] = "Wikipedia est tout";
+    char sub[] = "fWikipedia";
     char *verite;
 
     verite = ft_strstr(str, sub);
 
-    printf("%s\n", verite);
     printf("%s", verite);
     //char i, j;
     //i = ft_strupcase(string1);
