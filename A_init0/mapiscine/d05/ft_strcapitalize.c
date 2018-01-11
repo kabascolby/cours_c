@@ -5,7 +5,7 @@ int ft_isalpha(int c)
 
 int ft_isdigit(int c)
 {
-	return(c >= 0  && c <= 9);
+	return(c >= '0'  && c <= '9');
 }
 char *ft_strcapitalize(char *str)
 {
@@ -25,7 +25,7 @@ char *ft_strcapitalize(char *str)
 			space = 0;
 		if ((space == 1) && (str[i] >= 'a' && str[i] <= 'z'))
 			str[i] = str[i] - 32;
-		if ((space == 1) && (str[i] >= 'A' && str[i] <= 'Z'))
+		if ((space == 0) && (str[i] >= 'A' && str[i] <= 'Z'))
 			str[i] = (str[i] - 'A') + 'a'; /*meme chose que str[i] + 32 */ 
 		i++;
 	}

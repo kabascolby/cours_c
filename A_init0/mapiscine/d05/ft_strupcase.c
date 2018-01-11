@@ -1,16 +1,15 @@
 char 	*ft_strupcase(char *str)
 {
 	int 	i;
-
 	i = 0;
-	while(str[i++])
+	while (str[i])
 	{
-		if (str[i] >= 'a' || str[i] <= 'z')
-			*str = *str - 32;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		i++;
 	}
 	return (str);
 }
-
 /* une autre version qui utilisera une fonction utile pour le future
  *
  * int ft_toupper(int c)
