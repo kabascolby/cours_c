@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:33:00 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/11 08:36:24 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/11 08:39:48 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int ft_remalloc(char **save)
     if (!(tmp = ft_strnew(ft_strlen(*save))))
         return (0);
     ft_strcpy(tmp, *save);
-
     *save = NULL;
     if (!(*save = ft_strnew(ft_strlen(tmp) + BUFF_SIZE)))
         return (0);
