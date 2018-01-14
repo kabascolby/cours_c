@@ -79,6 +79,7 @@ void tab_mul(char *str)
 }
 int main(int argc, char **argv)
 {
+    argv[1] = "3";
     if(argc > 1)
         tab_mul(argv[1]);
     write(1, "\n", 1);

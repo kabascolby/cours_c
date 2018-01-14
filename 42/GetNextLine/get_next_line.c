@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:33:00 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/11 08:39:48 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/13 05:59:27 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int fill_line(int j, char **save, char **line)
 
 int get_next_line(int fd, char **line)
 {
-    int j;
+    int l;
     static char *save;
 
     if (fd < 0 || (!save && !(save = ft_strnew(BUFF_SIZE))))
@@ -68,7 +68,7 @@ int get_next_line(int fd, char **line)
     if (!(*line = (char *)malloc(sizeof(char) * BUFF_SIZE)))
         return (-1);
 
-    while ((j = read(fd, *line, BUFF_SIZE)) > 0)
+    while ((l = read(fd, *line, BUFF_SIZE)) > 0)
     {
         if (!(ft_remalloc(&save)))
             return (-1);
@@ -76,7 +76,7 @@ int get_next_line(int fd, char **line)
         if (ft_memchr(*line, '\n', BUFF_SIZE))
             break;
     }
-    if ((fill_line(j, &save, &(*line))) == 2)
+    if ((fill_line(l, &save, &(*line))) == 2)
         return (1);
     if (ft_memcmp((*line), save, ft_strlen(*line)) == 0)
     {
