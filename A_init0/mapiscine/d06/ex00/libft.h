@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/09/10 10:15:06 by lamkaba2          #+#    #+#             */
-/*   Updated: 2018/01/17 23:26:53 by lkaba            ###   ########.fr       */
+/*   Created: 2017/11/30 13:33:59 by lkaba             #+#    #+#             */
+/*   Updated: 2018/01/17 05:17:00 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_ultimate_range(int **range, int min, int max)
-{
-	int	*ret;
-	int i;
-
-	i = 0;
-	ret = (int*)malloc(sizeof(int) * (max - min));
-	while (min < max)
-	{
-		ret[i] = min;
-		min++;
-		i++;
-	}
-	*range = ret;
-	return (i);
-}
-
-int main(void)
-{
-	int *tab;
-	int **tab1;
-	tab1 = &tab;	
-	printf("%d, %p",ft_ultimate_range(tab1, 30, 20), tab);
-	return 0;
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_swap(int *a, int *b);
+int		ft_strcmp(const char *s1, const char *s2);
+#endif
