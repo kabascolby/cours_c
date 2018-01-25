@@ -12,9 +12,7 @@ char	*ft_strcat(char *str, char c)
 
 	i = 0;
 	while (str[i] != '\0')
-	{
 		i++;
-	}
 	str[i++] = c;
 	str[i] = '\0';
 	return (str);
