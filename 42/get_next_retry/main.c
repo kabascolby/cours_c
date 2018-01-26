@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 16:05:34 by jaleman           #+#    #+#             */
-/*   Updated: 2018/01/24 23:00:36 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/25 18:27:17 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 		{
 			printf("[Return: %d] Line #%d: %s\n", ret, ++line, buff);
 			// free(buff);
+			// puts("WHYYYY");
 		}
 		printf("[Return: %d] Line #%d: %s\n", ret, ++line, buff);
 		if (ret == -1)
