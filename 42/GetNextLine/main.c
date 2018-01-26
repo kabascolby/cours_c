@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/09 16:05:34 by jaleman           #+#    #+#             */
-/*   Updated: 2018/01/25 18:27:17 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/25 21:58:04 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,6 @@
 
 int main(int argc, char **argv)
 {
-/* 	int fd;
-	char *line;
-
-	fd = 0;
-	fd = open(argv[1], O_RDONLY);
-	get_next_line(fd, &line);
-		printf("%s\n", line);
-	get_next_line(fd, &line);
-		printf("%s\n", line);
-	get_next_line(fd, &line);
-		printf("%s\n", line);
-	// get_next_line(fd, &line);
-
-	close(fd); */
-	
 	int fd;
 	int ret;
 	int line;
@@ -66,5 +51,4 @@ int main(int argc, char **argv)
 		close(fd);
 	}
 	return (0);
-	
 }

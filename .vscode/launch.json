@@ -10,7 +10,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/42/get_next_retry/a.out",
-            "args": ["${workspaceFolder}/42/get_next_retry/test"],
+            "args": ["${workspaceFolder}/42/get_next_retry/testttt"],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

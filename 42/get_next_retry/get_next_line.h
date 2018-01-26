@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:37:39 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/23 21:12:11 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/25 21:03:15 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # define DB(x) ft_debug((x));
 # define DBI(x) ft_debug(ft_itoa((x)));
-# define BUFF_SIZE 8
+# define BUFF_SIZE 1
 
 int	get_next_line(int fd, char **line);
 #endif
