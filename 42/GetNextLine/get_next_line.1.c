@@ -6,13 +6,12 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:33:00 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/25 21:34:33 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/26 18:37:18 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "get_next_line.h"
-#include <stdio.h>
 
 int	ft_remalloc(char **save, int len)
 {

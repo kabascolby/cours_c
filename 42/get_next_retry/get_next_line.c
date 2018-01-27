@@ -6,13 +6,12 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:33:00 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/25 22:00:30 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/26 18:39:09 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "get_next_line.h"
-#include <stdio.h>
 
 int	ft_remalloc(char **save, int len)
 {
@@ -29,28 +28,38 @@ int	ft_remalloc(char **save, int len)
 
 int	fill_line(int j, char **save, char **line)
 {
+	// j = length read
+	// save = saved message buffer
 	int i;
 	int k;
 
 	k = 0;
 	i = 0;
+	// while we read stuff, OR we have saved buffer
 	if (j != 0 || ft_strlen((*save)) != 0)
 	{
-		while (((*save)[i] != '\0') && ((*save)[i] != '\n'))
+		// Find length up to EOF or NEWLINE
+		while(((*save)[i] != '\0') && ((*save)[i] != '\n'))
 			i++;
+		// if index i == NEWLINE
 		if ((*save)[i] == '\n' || (*save)[i] == '\0')
 		{
+			// Allocate new memory for output buffer
 			*line = (char *)malloc(sizeof(char) * i);
+			// Write into the buffer the length up to EOF/NEWLINE
 			ft_strncpy(*line, *save, i);
 			(*line)[i] = '\0';
-		}
-		else if ((*save)[i] == '\0' && j == 0)
+		} else if ((*save)[i] == '\0' && j == 0) {
+			// *line = NULL;
 			return (1);
-		if ((*save)[i++])
+		}
+		// if data is past this NEWLINE/END
+		if((*save)[i++])
 			while ((*save)[i])
 				(*save)[k++] = (*save)[i++];
 		(*save)[k] = '\0';
 		return (2);
+		//if(l < BUFF_SIZE &&)
 	}
 	return (1);
 }
@@ -62,7 +71,7 @@ int	get_next_line(int fd, char **line)
 	static char	*save[5000];
 	char		buf[BUFF_SIZE + 1];
 
-	if (fd < 0 || read(fd, buf, 0) < 0)
+	if (fd < 0 || read(fd, buf, 0) < 0 || !line)
 		return (-1);
 	len = ft_strlen(save[fd]);
 	while ((l = read(fd, buf, BUFF_SIZE)) > 0)
@@ -77,6 +86,6 @@ int	get_next_line(int fd, char **line)
 	}
 	if ((fill_line(l, &save[fd], line)) == 2)
 		return (1);
-	else
-		return (0);
+	ft_strdel(&save[fd]);
+	return (0);
 }
