@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:33:00 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/26 18:39:09 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/26 19:03:21 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,28 @@ int	ft_remalloc(char **save, int len)
 
 int	fill_line(int j, char **save, char **line)
 {
-	// j = length read
-	// save = saved message buffer
 	int i;
 	int k;
 
 	k = 0;
 	i = 0;
-	// while we read stuff, OR we have saved buffer
 	if (j != 0 || ft_strlen((*save)) != 0)
 	{
-		// Find length up to EOF or NEWLINE
-		while(((*save)[i] != '\0') && ((*save)[i] != '\n'))
+		while (((*save)[i] != '\0') && ((*save)[i] != '\n'))
 			i++;
-		// if index i == NEWLINE
 		if ((*save)[i] == '\n' || (*save)[i] == '\0')
 		{
-			// Allocate new memory for output buffer
 			*line = (char *)malloc(sizeof(char) * i);
-			// Write into the buffer the length up to EOF/NEWLINE
 			ft_strncpy(*line, *save, i);
 			(*line)[i] = '\0';
-		} else if ((*save)[i] == '\0' && j == 0) {
-			// *line = NULL;
-			return (1);
 		}
-		// if data is past this NEWLINE/END
-		if((*save)[i++])
+		else if ((*save)[i] == '\0' && j == 0)
+			return (1);
+		if ((*save)[i++])
 			while ((*save)[i])
 				(*save)[k++] = (*save)[i++];
 		(*save)[k] = '\0';
 		return (2);
-		//if(l < BUFF_SIZE &&)
 	}
 	return (1);
 }
