@@ -1,0 +1,69 @@
+11 The device that makes the link between the local network and the outside world is \"nat (10.90.1.11)\". Nat translates the IP addresses of computers in a local network to a simple IP address. This address is often used by the router that connects the computers to the Internet.
+12- ping -c 2 10.51.1.253 | sed -n 2,3p
+13- The server type is a DHCP server.
+You can test it with "host <IP address>"
+14 - echo "\033[33mcommand: host 10.51.1.81
+command output: 81.1.51.10.in-addr.arpa domain name pointer dpm-master.42.us.org.\033[0m"
+15- The /etc/hosts file contains the local DNS entries.
+16- This can be accomplished by simply add a new line after everything in /etc/hosts:
+46.19.122.85 intra.42.fr
+The first column contains the IP address and the second column contains the url.
+
+recherche system.
+1 cat /etc/debian_version
+2 hostname <whatever>
+3 change "/etc/hostname" file and it would be permanent
+4 uptime
+5 debian :
+/etc/init.d/ssh status
+
+service ssh status
+
+6 - service ssh --full-restart
+7 ps aux | grep sshd | grep /usr/sbin
+8 File that contains the RSA keys that are authorized to connect via SSH is .ssh/authorized_keys.
+9 who
+10 fdisk -l <device>
+11 debian : (disk file - local mounted / human read - free space available)
+df -lh
+12 du -ha --max-depth=1 /var
+13 top -n 1 | sed -n '2,$p'
+14 tail -f /var/log/syslog &
+15 - pkill -9 tail
+16- It would be cron.
+17 iptables -L
+18 iptables -A INPUT -p tcp -s 10.0.0.0/8 --dport 22 -j ACCEPT
+19- iptables -P INPUT DROP
+
+script
+1- cat /etc/passwd | awk -F':' '{ print $1,$3,$6}'
+2- #!/bin/bash
+
+# why '>>' in case you have some others configs in your crontab
+# crontab -l /// crontab -e to see your messages
+echo "* 4 * * 0  echo "hey i just send you random yearly message" >> /var/log/update_script.log" >> /var/spool/cron/crontabs/root
+
+3- #!/bin/bash
+
+if [ $# != 1 ]; then 
+	echo "Incorrect number of arguments !" >&1
+	echo "USAGE: ./03.sh [DIRECTORY]" 
+fi 
+ls -LS $1
+
+4- # We can echo the folllowing snippet to be able to see a change in the /etc/crontab echo "0 0 * * * $(pwd)/04.sh" >> /etc/crontab
+
+MD5="variable"
+variable=`md5sum /etc/crontab | awk '{ print $1 }'`
+read -r line<$MD5
+if [ "$line" != "$variable" ]
+		then
+        echo "$variable" | mail -s "[RED_ALERT] Cron tab changed" root
+else
+		echo "unchanged"
+fi
+echo "$variable">variable
+
+5- #!/bin/bash
+printf '42'
+
