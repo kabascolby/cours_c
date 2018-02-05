@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 19:31:28 by lkaba             #+#    #+#             */
-/*   Updated: 2018/01/17 21:07:34 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/01/29 15:31:10 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		*ft_range(int min, int max)
 	else
 	{
 		i = 0;
-		len = max - min - 1;
+		len = max - min;
 		tab = (int *)malloc((*tab) * len);
 		while (min < max)
 		{
