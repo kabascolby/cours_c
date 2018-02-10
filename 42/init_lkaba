@@ -67,3 +67,21 @@ echo "$variable">variable
 5- #!/bin/bash
 printf '42'
 
+Doing a rm -rf /var/lib/docker/network on the docker 
+server as suggested in docker/docker#17846 and rebooting it fixes 
+the problem for me. 
+
+docker-machine regenerate-certs lkaba
+
+adduser $USER mail
+
+docker run -it debian /bin/sh
+
+brew install docker docker-machine docker-compose;
+docker-machine create  --driver=virtualbox pendejada;
+eval $(docker-machine env pendejada);
+docker pull debian;
+docker run -it debian /bin/sh
+
+#apt-get update -y && apt-get upgrade -y && apt-get install -y build-essential && apt-get install -y ssh && apt-get install -y man && apt-get install -y cron
+&& apt-get install -y vim && apt-get install -y postfix
