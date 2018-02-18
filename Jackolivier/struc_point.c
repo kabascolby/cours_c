@@ -35,32 +35,29 @@ void ft_putnbr(int n)
         ft_putnbr(n % 10);
     }
 }
+ typedef struct _point
+ {
+     float x;
+     float y;
+ } point;
 
-typedef struct _point point;
-
-struct _point
-{
-    float x;
-    float y;
-};
-
-void struct_print(point B)
-{
-    printf("(%f;%f)",B.x, B.y); 
-}
 point point_create(float x, float y)
-{
-    point Z;
-    Z.x = x;
-    Z.y = y;
-    return(Z);
-}
-
-int main()
-{
-    point A;
-     A = point_create(14, 15);
-    struct_print(A);
-    ft_putchar('\n');
-    return 0;
-}
+ {
+     point P;
+     P.x = x;
+     P.y = y;
+     return (P);
+ }
+ 
+ void point_display(point S)
+ {
+     printf("(%f ; %f)", S.x, S.y);
+ }
+ 
+ int main()
+ {
+     point A;
+     A = point_create(2, 1);
+     point_display(A);
+     return (0);
+ }
