@@ -18,7 +18,7 @@ char	*ft_strcat(char *str, char c)
 	return (str);
 }
 		
-int		ft_strchr(char *str, char c)
+int		ft_strcarchr(char *str, char c)
 {
 	while (*str)
 	{
@@ -41,7 +41,7 @@ void	ft_union(char *s1, char *s2)
 	}
 	while (*s2)
 	{
-		if(!(ft_strchr(match, *s2)))
+		if(!(ft_strcarchr(match, *s2)))
 			ft_strcat(match, *s2);
 		s2++;
 	}

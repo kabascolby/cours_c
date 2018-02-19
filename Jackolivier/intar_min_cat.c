@@ -1,13 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-typedef struct _intarray
-{
-    int* data;
-    int len;
-    int BIG[100000];
-} intarray;
+#include "intarray.h"
 
 void intarray_debug(intarray *T)
 {
@@ -74,7 +65,7 @@ void intarray_sort(intarray *A)
         j++;
     }
 }
-void intarray_concat(intarray *A, intarray *B, intarray **c, int len)
+void intarray_concat(intarray *A, intarray *B, intarray **c)
 {
     
     int i;
@@ -83,10 +74,10 @@ void intarray_concat(intarray *A, intarray *B, intarray **c, int len)
    (*c) = (intarray *)malloc(sizeof(intarray));
    bzero((*c), sizeof(intarray));
    (*c)->len = A->len + B->len;
-   (*c)->data = (int *)malloc(sizeof(int) * len);
+   (*c)->data = (int *)malloc(sizeof(int) * (*c)->len);
     bzero((intarray *)(*c)->data, sizeof(int) * (*c)->len);
     
-    while(++i < A->len)
+    while(++i < intarray_length(A))
         intarray_set((*c), i, A->data[i]);
      j = -1;
     while(++j < B->len)
@@ -98,13 +89,12 @@ int intarray_min(intarray *M)
     int m;
     int i;
 
-    i = 1;
-    m = M->data[0];
-    while (i < intarray_length(M))
+    i = 0;
+    m = intarray_get(M, 0);
+    while (++i < intarray_length(M))
     {
         if (m > intarray_get(M, i))
             m = M->data[i];
-        i++;
     }
     return (m);
 }
@@ -118,8 +108,6 @@ int main(void)
     intarray N;
     intarray_create(&N, 5);
     bzero(N.data, sizeof(int) * N.len);
-   
-
     int i;
 
     i = 0;
@@ -128,15 +116,16 @@ int main(void)
     intarray_debug(&T);
     intarray_set(&T, 0, 19);
     printf("\n%d",intarray_get(&T, 3));
-    printf("\n%d\n",intarray_min(&T));
+    printf("\nLe minimun est: %d\n",intarray_min(&T));
     intarray_debug(&N);
+    printf("\n");
     intarray *c;
-    i = T.len + N.len;
-    intarray_concat(&T, &N, &c, i);
+    intarray_concat(&T, &N, &c);
     intarray_debug(c);
-     printf("\n");
-   // printf("\n%d",intarray_get(c, 3));
-
-   // intarray_destroy(&T);
-    
+    printf("\n%d\n",intarray_min(c));
+    printf("\n");
+    printf("\n%d",intarray_get(c, 3));
+    intarray_destroy(&T);
+    intarray_destroy(&N);
+    intarray_destroy(c);
 }
