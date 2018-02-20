@@ -57,7 +57,7 @@ void	ft_print(char *a)
 			{
 				space = 0;
 				write(1, "   ", 3);
-			}.0
+			}
 			write(1, &a[i], 1);
 			space = 0;
 		}
