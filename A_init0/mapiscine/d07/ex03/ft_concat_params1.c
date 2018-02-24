@@ -39,7 +39,7 @@ char	*ft_concat_params(int argc, char **argv)
 		str[j++]  = '\n';
 		//len += len2;
 	}
-	//str[len + 1] = '\0';
+	str[j] = '\0';
 
 	return (str);
 }	

@@ -101,8 +101,8 @@ int main(void)
     intarray_create(T, 20);
 
    intarray *N;
-  N = (intarray*)malloc(sizeof(intarray));
-  intarray_create(N, 5);
+   N = (intarray*)malloc(sizeof(intarray));
+   intarray_create(N, 5);
     //bzero(N.data, N.len);
     
 
