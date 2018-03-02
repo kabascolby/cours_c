@@ -34,4 +34,3 @@ struct s_stock_par *ft_param_to_tab(int ac, char **av)
     T[i].str = 0;
     return (T);
 }
-

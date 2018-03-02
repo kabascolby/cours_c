@@ -22,3 +22,7 @@ http://www.cplusplus.com/reference/cstdio/printf/
 https://github.com/SuperSpyTX/42-CheckYourDorms  dorms extension.
 
 https://github.com/yyang42/ft_exam_guide/tree/master/exercices/inter revoir cela
+
+http://c.happycodings.com/beginners-lab-assignments/  "quelques exemples de code de bases"
+
+https://github.com/agavrel/42-ft_printf.git bonne pratique de printf;

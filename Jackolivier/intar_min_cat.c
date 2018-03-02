@@ -51,7 +51,7 @@ void intarray_sort(intarray *A)
     while(j < A->len)
     {
         i = 0;
-        while(i < A->len)
+        while(i + j < A->len - 1)
         {
             if(A->data[i] > A->data[i + 1])
             {

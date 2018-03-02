@@ -1,27 +1,9 @@
 #include <unistd.h>
 
-int main()
-
-int pos1;
-int pos2;
-int pos3;
-int pos4;
-int pos5;
-int pos6;
-int pos7;
-int pos8;
-
-pos1 = 0 + '0';
-pos2 = 0 + '0';
-pos3 = 0 + '0';
-pos4 = 0 + '0';
-pos5 = 0 + '0';
-pos6 = 0 + '0';
-pos7 = 0 + '0';
-pos8 = 0 + '0';
-
-if (octect >= 128)
+unsigned char reverse_bits2(unsigned char b)
 {
-    pos1 = 1 + '0';
-    octect = octet - 128;
+	b = (b & 0xF0) >> 4 | (b & 0x0F) << 4; // 1)
+	b = (b & 0xCC) >> 2 | (b & 0x33) << 2; // 2)
+	b = (b & 0xAA) >> 1 | (b & 0x55) << 1; // 3)
+	return (b);
 }
