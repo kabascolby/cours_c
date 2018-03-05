@@ -15,3 +15,16 @@ typedef struct s_printf
     t_pfnode    *head;  
 }              t_p;
 #endif
+
+typedef struct s_args
+{
+    int min;
+    int plus;
+    int space;
+    int hash;
+    int zero;
+    int 
+
+    int width
+
+}               t_args;

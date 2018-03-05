@@ -1,14 +1,12 @@
 #ifndef _LINKED_LIST_H
 #define _LINKED_LIST_H
-# include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-typedef struct _intarray
+typedef struct s_node
 {
     int i;
-    struct _intarray *next;
-} intarray;
-void insert(intarray **head, int n);
-void Print(intarray **head);
+    struct s_node *next;
+}               t_node;
+
 #endif
