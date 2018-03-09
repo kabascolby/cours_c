@@ -26,7 +26,7 @@ void ft_add(t_node **head, int n, int pos)
     j = 0;
     t_node *temp1;
     t_node *temp2;
-    if(*head == NULL || pos == 1)
+    if(pos == 1)
     {
         ft_insert(head, n);
         return ;
@@ -43,16 +43,25 @@ void ft_add(t_node **head, int n, int pos)
 
 void ft_del(t_node **l_head, int pos)
 {
+    int j;
+    j = 0;
     t_node *temp1;
     t_node *temp2;
-    
+
     temp1 = *l_head;
     if(pos == 1)
     {
-        
-        *l_head = temp1->
-
+        *l_head = temp1->next;
+        free(temp1);
+        temp1 = NULL;
+        return;
     }
+    while(j++ < pos-2)
+        temp1 = temp1->next;
+    temp2 = temp1->next;
+    temp1->next = temp2->next;
+    free(temp2);
+    temp2 = NULL;
 }
 int main()
 {
