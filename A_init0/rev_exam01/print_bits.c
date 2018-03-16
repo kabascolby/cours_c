@@ -1,8 +1,8 @@
 void    print_bits(unsigned char octet)
 {
     int z;
+    
     z = 128;
-
     while (z > 0)
     {
         if (octet & z)

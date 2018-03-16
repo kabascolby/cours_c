@@ -26,3 +26,5 @@ https://github.com/yyang42/ft_exam_guide/tree/master/exercices/inter revoir cela
 http://c.happycodings.com/beginners-lab-assignments/  "quelques exemples de code de bases"
 
 https://github.com/agavrel/42-ft_printf.git bonne pratique de printf;
+
+https://www.notion.so/Starfleet-2cc4eac8acdc4bbd83375e6777af1840 printf documentation
