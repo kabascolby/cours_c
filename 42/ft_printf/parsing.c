@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:37 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/17 19:54:24 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:13:24 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,20 @@ char *ft_parse3(char *s, t_args *flags)
 
 	char *ft_parse4(char *s, t_args *flags)
 	{
-		if(*s)
-
+		if(*s++ == 's')
+			flags->type = 's';
+		else if(*s++ == 'S')
+			flags->type = 'S';
+		else if(*s++ == 'p')
+			flags->type = 'p';
+		else if(*s++ == 'd')
+			flags->type = 'd';
+		else if(*s++ == 'D')
+			flags->type = 'D';
+		else if(*s++ == 'i')
+			flags->type = '';
+		else if(*s++ == 's')
+			flags->type = 's';
+		else if(*s++ == 's')
+			flags->type = 's';
 	}

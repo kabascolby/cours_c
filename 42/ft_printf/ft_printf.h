@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:44 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/17 19:53:47 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/17 20:00:42 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ typedef struct s_args
 	u_int8_t prec:1;
 	unsigned int field_w;
 	unsigned int precis;
-	unsigned intlength;
-	char convers;
+	unsigned int length;
+	char type;
 }				t_args;
 
 enum length{h = 1, hh, l, ll, j, z};
