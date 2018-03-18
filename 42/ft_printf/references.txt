@@ -1,5 +1,6 @@
 https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html
 https://www.notion.so/Starfleet-2cc4eac8acdc4bbd83375e6777af1840 printf documentation
+https://www.freebsd.org/cgi/man.cgi?query=printf&apropos=0&sektion=3&manpath=Debian+8.1.0&arch=default&format=html
 
 
 *	Flags	Minimum field Width	.precision Maximum field width	Length	Convertion Type*	

@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:44 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/15 18:45:03 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/17 19:53:47 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_args
 	u_int8_t prec:1;
 	unsigned int field_w;
 	unsigned int precis;
-	u_int32_t length;
+	unsigned intlength;
 	char convers;
 }				t_args;
 
@@ -53,6 +53,8 @@ int ft_nodeprint(t_pfnode **l_head);
 void ft_reverse(t_pfnode **h);
 char *ft_parse1(char *s, t_args *flags);
 char *ft_parse2(char *s, t_args *flags);
-char *ft_struct_check(t_args *flags);
+char *ft_parse3(char *s, t_args *flags);
+char *ft_parse4(char *s, t_args *flags);
+void ft_struct_check(t_args *flags);
 
 #endif

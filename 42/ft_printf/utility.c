@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 17:08:55 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/15 18:53:28 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/16 06:14:09 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void ft_reverse(t_pfnode **h)
   *h = prev;
 }
 
-char *ft_struct_check(t_args *flags)
+void ft_struct_check(t_args *flags)
 {
     printf("plus: %d\n", flags->plus);
     printf("min: %d\n", flags->min);
@@ -42,5 +42,5 @@ char *ft_struct_check(t_args *flags)
     printf("precis: %d\n", flags->precis);
     printf("field_w: %d\n", flags->field_w);
     
-    return("fin");
+    //return("fin");
 }

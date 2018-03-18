@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:32 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/16 04:31:45 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/17 19:09:16 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,9 @@ int ft_printf(char *s, ...)
     s2 = s;
     while (*s)
     {
-        ((*s == '%' && *(s + 1) == '%' ) ? ((s = (s + 2)),s2 = s, ft_addnode("%", 1, &head)): NULL);
         if(*s != '%')
             i++;
-        if (!ft_strlen(s) || *s == '%')
+        if (!ft_strlen(++s) || *s == '%')
         {
             if (*s == '%')
             {
@@ -67,7 +66,7 @@ int ft_printf(char *s, ...)
             s2 = s;
             
         }
-        s++;
+        //s++;
     }
     return(ft_nodeprint(&head));
 }
