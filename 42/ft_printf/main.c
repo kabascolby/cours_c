@@ -6,14 +6,19 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/16 06:14:27 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/20 21:37:59 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 int main()
 {
-    ft_printf("lamine%\n%10d.3s");
+    //ft_printf("lamine\n%lD kaba");
+    ft_printf("hello %s kaba %s %s","Mohamed", "lamine", "kaba2");
+     //printf("%#-12o", 123456789);
+    //printf("%%%10%%10.3rud");
+    //printf("%%%10%");
+    //printf("%10%");
     //printf("%0 +020.177d\n", 100);
     //printf("%.30s\n", "abcdefg");
     //printf("%.30d\n", 1234567);

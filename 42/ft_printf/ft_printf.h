@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:44 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/17 20:00:42 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/20 07:12:51 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,21 @@ typedef struct s_pfnode
 
 typedef struct s_args
 {
-	u_int8_t min:1;
-	u_int8_t plus:1;
-	u_int8_t space:1;
-	u_int8_t hash:1;
-	u_int8_t zero:1;
-	u_int8_t start:1;
-	u_int8_t prec:1;
-	unsigned int field_w;
-	unsigned int precis;
-	unsigned int length;
-	char type;
-}				t_args;
+	u_int8_t 		min : 1;
+	u_int8_t 		plus : 1;
+	u_int8_t 		space : 1;
+	u_int8_t 		hash : 1;
+	u_int8_t 		zero : 1;
+	u_int8_t 		start : 1;
+	u_int8_t 		prec : 1;
+	unsigned int 	field_w;
+	unsigned int 	precis;
+	unsigned int 	length;
+	char 			type;
+	char 			*str;
+} t_args;
 
-enum length{h = 1, hh, l, ll, j, z};
+enum length{H = 1, HH, L, LL, J, Z};
 void ft_addnode(char *s1, int len, t_pfnode **head);
 int ft_printf(char *s, ...);
 int ft_nodeprint(t_pfnode **l_head);
@@ -55,6 +56,7 @@ char *ft_parse1(char *s, t_args *flags);
 char *ft_parse2(char *s, t_args *flags);
 char *ft_parse3(char *s, t_args *flags);
 char *ft_parse4(char *s, t_args *flags);
+void ft_conversion(char *s, va_list *ap, t_args *flags, t_pfnode **head);
 void ft_struct_check(t_args *flags);
 
 #endif

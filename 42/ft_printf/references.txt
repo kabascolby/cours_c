@@ -57,6 +57,7 @@ negative numbers.  A+ overrides a space if both are	used.
 
 
 
-
+//((*s == '%' && *(s + 1) == '%') ? ((s = (s + 2)), s2 = s, ft_addnode("%", 1, &head)) : NULL);
+	while (*s)
 
 ((*s == '%' && *(s + 1) == '%' ) ? ((s = (s + 2)), ft_addnode("%", 1, &head)): NULL);

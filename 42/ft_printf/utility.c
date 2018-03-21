@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 17:08:55 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/16 06:14:09 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/20 02:57:36 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void ft_struct_check(t_args *flags)
     printf("prec: %d\n", flags->prec);
     printf("precis: %d\n", flags->precis);
     printf("field_w: %d\n", flags->field_w);
-    
-    //return("fin");
+    printf("length: %d\n", flags->length);
+    printf("type: %c\n", flags->type);
 }
