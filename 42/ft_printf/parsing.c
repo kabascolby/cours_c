@@ -6,43 +6,43 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:37 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/20 07:00:02 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/24 06:24:23 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char *ft_parse1(char *s, t_args *flags)
+char *ft_parse1(char *s, t_p *p)
 {
 	int length;
-	ft_bzero(flags, sizeof(t_args));
+	ft_bzero(&p->f, sizeof(t_args));
 	while (*s)
 	{
-		flags->hash = *s == '#' ? 1 : flags->hash;
-		flags->min = *s == '-' ? 1 : flags->min;
-		flags->plus = *s == '+' ? 1 : flags->plus;
-		flags->zero = *s == '0' ? 1 : flags->zero;
-		flags->space = *s == ' ' ? 1 : flags->space;
+		p->f.hash = *s == '#' ? 1 : p->f.hash;
+		p->f.min = *s == '-' ? 1 : p->f.min;
+		p->f.plus = *s == '+' ? 1 : p->f.plus;
+		p->f.zero = *s == '0' ? 1 : p->f.zero;
+		p->f.space = *s == ' ' ? 1 : p->f.space;
 
 		if (!CE_5(*s, '#', '-', '+', ' ', '0'))
 			break;
 		s++;
 	}
-	flags->space = (flags->plus) ? 0 : flags->space;
-	if (flags->plus)
-		flags->space = 0;
-	return (ft_parse2(s, flags));
+	/** if plus is on then the space is off, if min is on then zero is off **/
+	p->f.space = p->f.plus ? 0 : p->f.space;
+	p->f.zero = p->f.min ? 0 : p->f.zero;
+	
+	 //this behavior is define in the man but the implementaton is opposite might see later
+	return (ft_parse2(s, p));
 }
-char *ft_parse2(char *s, t_args *flags)
+char *ft_parse2(char *s, t_p *p)
 {
-	while (*s)
-	{
-		if (ft_isdigit(*s))
-			while (ft_isdigit(*s))
-				flags->field_w = (10 * flags->field_w) + NUM(*(s++));
-		/* else if (*s == '*')
+	while (ft_isdigit(*s))
+		p->f.field_w = (10 * p->f.field_w) + NUM(*(s++));
+	//printf("string %s\n", s);
+	/* else if (*s == '*')
 		{
-			length = va_arg(*argp, int);
+			length = va_arg(*argp, int);s
 			*++fmt;
 			if (length < 0)
 			{
@@ -50,71 +50,71 @@ char *ft_parse2(char *s, t_args *flags)
 				length = -length;
 			}
 		} */
-		else if (*s == '.')
-		{
-			s++;
-			flags->prec = 1;
-			if (ft_isdigit(*s))
-				while (ft_isdigit(*s))
-					flags->precis = (10 * flags->precis) + NUM(*(s++));
-			if(flags->precis < 1)
-				flags->precis = 0;
-		}
-		else
-			break;
-		//s++;
+	if (*s == '.')
+	{
+		s++;
+		p->f.prec = 1;
+		while (ft_isdigit(*s))
+			p->f.precis = (10 * p->f.precis) + NUM(*(s++));
+		p->f.zero = 0;
 	}
-	return (ft_parse3(s, flags));
+	//s++;
+	return (ft_parse3(s, p));
 }
 
-char *ft_parse3(char *s, t_args *flags)
+char *ft_parse3(char *s, t_p *p)
 {
 	int k;
 
 	k = 1;
-	((*s == 'h') && (*(s + 1) != 'h')) ? flags->length = H : 1;
-	((*s == 'l') && (*(s + 1) != 'l')) ? flags->length = L : k;
-	(*s == 'j') ? flags->length = J : k;
-	(*s == 'z') ? flags->length = Z : k;
+	((*s == 'h') && (*(s + 1) != 'h')) ? p->f.length = H : 1;
+	((*s == 'l') && (*(s + 1) != 'l')) ? p->f.length = L : k;
+	(*s == 'j') ? p->f.length = J : k;
+	(*s == 'z') ? p->f.length = Z : k;
 	if ((*s == 'h') && *(s + 1) == 'h')
 	{
-		flags->length = HH;
+		p->f.length = HH;
 		s++;
 	}
 	if ((*s == 'l') && *(s + 1) == 'l')
 	{
-		flags->length = LL;
+		p->f.length = LL;
 		s++;
 	}
 	if (CE_4(*s, 'h', 'l', 'j', 'z'))
 		s++;
-	return (ft_parse4(s, flags));
+	return (ft_parse4(s, p));
 }
 
-char *ft_parse4(char *s, t_args *flags)
+char *ft_parse4(char *s, t_p *p)
 {
 	if (CE_5(*s, 's', 'S', 'p', 'd', 'D') || CE_5(*s, 'i', 'o', 'O', 'u', 'U') || CE_5(*s, 'x', 'X', 'c', 'C', '%'))
 	{
 		//char str[]="s, S, p, d, D, i, o, O, u, U, x, X, c, C, %";
-		flags->type = *s == 's' ? 's' : flags->type;
-		flags->type = *s == 'S' ? 'S' : flags->type;
-		flags->type = *s == 'p' ? 'p' : flags->type;
-		flags->type = *s == 'd' ? 'd' : flags->type;
-		flags->type = *s == 'D' ? 'D' : flags->type;
-		flags->type = *s == 'i' ? 'i' : flags->type;
-		flags->type = *s == 'o' ? 'o' : flags->type;
-		flags->type = *s == 'O' ? 'O' : flags->type;
-		flags->type = *s == 'u' ? 'u' : flags->type;
-		flags->type = *s == 'U' ? 'U' : flags->type;
-		flags->type = *s == 'x' ? 'x' : flags->type;
-		flags->type = *s == 'X' ? 'X' : flags->type;
-		flags->type = *s == 'c' ? 'c' : flags->type;
-		flags->type = *s == 'C' ? 'C' : flags->type;
-		flags->type = *s == '%' ? '%' : flags->type;
+		p->f.type = *s == 's' ? 's' : p->f.type;
+		p->f.type = *s == 'S' ? 'S' : p->f.type;
+		p->f.type = *s == 'p' ? 'p' : p->f.type;
+		p->f.type = *s == 'd' ? 'd' : p->f.type;
+		p->f.type = *s == 'D' ? 'D' : p->f.type;
+		p->f.type = *s == 'i' ? 'i' : p->f.type;
+		p->f.type = *s == 'o' ? 'o' : p->f.type;
+		p->f.type = *s == 'O' ? 'O' : p->f.type;
+		p->f.type = *s == 'u' ? 'u' : p->f.type;
+		p->f.type = *s == 'U' ? 'U' : p->f.type;
+		p->f.type = *s == 'x' ? 'x' : p->f.type;
+		p->f.type = *s == 'X' ? 'X' : p->f.type;
+		p->f.type = *s == 'c' ? 'c' : p->f.type;
+		p->f.type = *s == 'C' ? 'C' : p->f.type;
+		p->f.type = *s == '%' ? '%' : p->f.type;
 		s++;
 	}
-	/* if(flags->type)
-		return(ft_conversion(flags)); */
-	ft_struct_check(flags);
+	else
+	{
+		//printf("dasfasdfasdfasfsafdfasfd%s\n",p->f.str);
+		return (s);
+	}
+	ft_conversion(p);
+	ft_addnode(p->f.str, ft_strlen(p->f.str), &p->head);
+	ft_struct_check(&p->f);
 	return (s);
 }

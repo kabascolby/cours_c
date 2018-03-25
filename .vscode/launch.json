@@ -9,7 +9,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/A_init0/mapiscine/d07/ex04/a.out",
+            "program": "${workspaceFolder}/42/ft_printf/a.out",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",

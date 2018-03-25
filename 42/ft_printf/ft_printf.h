@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:44 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/20 07:12:51 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/24 05:38:55 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,27 @@
 # include "libft/libft.h"
 # include <stdarg.h>
 # include <stdlib.h>
+
 # include <stdio.h> // REMOVE LATER NOT ALLOWED
 
 # define NUM(c) ((c) - '0')
+
 # define CE_(a, b) ((a) == (b))
 # define CE_2(a, b, c) (CE_(a, b) || CE_(a, c))
 # define CE_3(a, b, c, d) (CE_(a, b) || CE_(a, c) || CE_(a, d))
 # define CE_4(a, b, c, d, e) (CE_2(a, b, c) || CE_2(a, d, e))
 # define CE_5(a, b, c, d, e, f) (CE_3(a, b, c, d) || CE_2(a, e, f))
+
+typedef union  s_values
+{
+	wchar_t 	wc;
+	char 		c;
+	char 		*str;
+	wchar_t 	*ws;
+	intmax_t 	im;
+	uintmax_t 	um;
+	void		*p;
+}			t_value;
 
 typedef struct s_pfnode
 {
@@ -31,32 +44,48 @@ typedef struct s_pfnode
     struct s_pfnode *next;
 }               t_pfnode;
 
-typedef struct s_args
+typedef struct 		s_args
 {
-	u_int8_t 		min : 1;
-	u_int8_t 		plus : 1;
-	u_int8_t 		space : 1;
-	u_int8_t 		hash : 1;
-	u_int8_t 		zero : 1;
-	u_int8_t 		start : 1;
-	u_int8_t 		prec : 1;
+	u_int8_t 		min;
+	u_int8_t 		plus;
+	u_int8_t 		space;
+	u_int8_t 		hash;
+	u_int8_t 		zero;
+	u_int8_t 		start;
+	u_int8_t 		prec;
 	unsigned int 	field_w;
 	unsigned int 	precis;
 	unsigned int 	length;
 	char 			type;
 	char 			*str;
-} t_args;
+	char			sign;
+	int				len;
+	t_value			types;
+} 					t_args;
+
+typedef struct		s_printf
+{
+	t_args			f;
+	va_list			ap;
+	t_pfnode		*head;
+	char			*s3;
+}					t_p;
 
 enum length{H = 1, HH, L, LL, J, Z};
 void ft_addnode(char *s1, int len, t_pfnode **head);
 int ft_printf(char *s, ...);
 int ft_nodeprint(t_pfnode **l_head);
 void ft_reverse(t_pfnode **h);
-char *ft_parse1(char *s, t_args *flags);
-char *ft_parse2(char *s, t_args *flags);
-char *ft_parse3(char *s, t_args *flags);
-char *ft_parse4(char *s, t_args *flags);
-void ft_conversion(char *s, va_list *ap, t_args *flags, t_pfnode **head);
+char *ft_parse1(char *s, t_p *p);
+char *ft_parse2(char *s, t_p *p);
+char *ft_parse3(char *s, t_p *p);
+char *ft_parse4(char *s, t_p *p);
+void ft_conversion(t_p *p);
 void ft_struct_check(t_args *flags);
-
+void format_conversion(t_p *p);
+void ft_precision(t_p *p);
+void ft_field_width(t_p *p);
+void flags_space_sign(t_p *p);
+void flags_zero(t_p *p);
+char *ft_frsplitstr(char **s, int j, char *s2);
 #endif

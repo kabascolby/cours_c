@@ -47,17 +47,26 @@ negative numbers.  A+ overrides a space if both are	used.
 
 
 
+bonus:
+
+Gestion de conversions plus délicates : eE, fF, gG, aA, n.
+• Gestion de flags plus delicats : *, $, L, ’ .
+• Gestion de flags non existants : %b pour afficher en binaire, %r pour afficher une
+chaine avec des caractères non imprimables, %k pour afficher une date à un format
+ISO quelconque, etc.
+• Gestion de modifieurs pour gérer les couleurs, les fd ou des choses fun comme ça :)
+printf("Le fichier {cyan}%s{eoc} contient : {red}%s{eoc}", filename, str) ;
 
 
 
 
+https://stackoverflow.com/tour
 
 
 
+a consulter plustard
 
-
-
-//((*s == '%' && *(s + 1) == '%') ? ((s = (s + 2)), s2 = s, ft_addnode("%", 1, &head)) : NULL);
-	while (*s)
-
-((*s == '%' && *(s + 1) == '%' ) ? ((s = (s + 2)), ft_addnode("%", 1, &head)): NULL);
+https://stackoverflow.com/questions/5163835/what-is-u-int32-t
+https://en.wikipedia.org/wiki/C_data_types
+https://stackoverflow.com/questions/6920554/source-code-in-embedded-c-for-unsigned-integer-to-string/40731333  imperatif
+https://cboard.cprogramming.com/c-programming/104485-how-convert-uint32_t-string.html
