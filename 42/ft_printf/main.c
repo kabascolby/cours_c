@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/24 18:13:46 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/27 03:18:37 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,17 @@
 int main()
 {
 	char  n;
-    //printf("%s\n",ft_itoa(1001010));
-    ft_printf("hello %s %-+8.5d%s\n", "kaba", 123, "lamine");
-    printf("hello %s %-+8.5d%s\n", "kaba", 123, "lamine");
-    //printf("% +15d\n", 1001010);
-   // printf("Foo%ls", L"ljgss");
-    //printf("%%%10%%10.3rud");
-    //printf("%%%10%");
-    //printf("%10%");
-    //printf("%0 +020.177d\n", 100);
-    //printf("%.30s\n", "abcdefg");
-    //printf("%.30d\n", 1234567);
-     //printf("%0o\n", 12789);
-    /*printf("%x\n", 12789);
-    printf("%-50dhello\n", 12789);
-    printf("%+dhello\n",12789); */
-	/* leaks
-    while (1)
-		n++; */
+    //ft_printf("hello %s % -8d%s\n", "kaba", 123, "lamine");
+    //ft_printf("hello %s %10%%-8stest\n","kaba", "lamine");
+    ft_printf("ws1%-12.3S ws2\n", L"whidestring");
+    printf("ws1%-12.3S ws2\n", L"whidestring");
+    //ft_printf("wc%lc\n", 'c');
+    //printf("wc%C\n", 'k');
+    //ft_printf("hello %s %10%%-8stest\n","kaba", "lamine");
+    //printf("hello %s %10%%-8stest\n","kaba", "lamine");
+    //ft_printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
+    //printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
+    //printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
+    
     return 0;
 }
