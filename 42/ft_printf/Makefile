@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/01/02 02:27:45 by tadey             #+#    #+#              #
-#    Updated: 2018/02/19 01:13:18 by lkaba            ###   ########.fr        #
+#    Created: 2018/03/27 18:43:13 by lkaba             #+#    #+#              #
+#    Updated: 2018/03/28 23:48:54 by lkaba            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf
+NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
 FILES = $(wildcard *.c)
 OFILES = $(patsubst %.c, %.o, $(FILES))
@@ -18,18 +18,22 @@ LIBFT = libft.a
 
 all: $(NAME)
 
-
 $(NAME): $(LIBFT) $(OFILES)
-	@gcc $(FLAGS) $(OFILES) libft/$(LIBFT) -o $@
+	@ar rc $(NAME) $(OFILES) $(wildcard libft/*.o)
+	@ranlib $(NAME)
 
-$(LIBFT):
+$(LIBFT): force
 	@make -C libft
 
-%.o: %.c
-	gcc $(FLAGS) -c $<
+%.o: %.c ft_printf.h
+	@echo compiling $<
+	@gcc $(FLAGS) -I libft/ -c $<
+
+force:
+	@true
 
 clean:
-	@/bin/rm -f $(FILES:.c=.o)
+	@/bin/rm -f $(OFILES)
 	@make clean -C libft
 
 fclean: clean

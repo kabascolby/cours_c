@@ -6,25 +6,30 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/27 03:18:37 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/31 16:23:32 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf/ft_printf.h"
+#include <stdio.h>
+
+void ft_struct_check(t_args *flags)
+{
+    printf("plus: %d\n", flags->plus);
+    printf("min: %d\n", flags->min);
+    printf("space: %d\n", flags->space);
+    printf("hash: %d\n", flags->hash);
+    printf("zero: %d\n", flags->zero);
+    printf("prec: %d\n", flags->prec);
+    printf("precis: %d\n", flags->precis);
+    printf("field_w: %d\n", flags->field_w);
+    printf("length: %d\n", flags->length);
+    printf("type: %c\n", flags->type);
+}
+
 int main()
 {
-	char  n;
-    //ft_printf("hello %s % -8d%s\n", "kaba", 123, "lamine");
-    //ft_printf("hello %s %10%%-8stest\n","kaba", "lamine");
-    ft_printf("ws1%-12.3S ws2\n", L"whidestring");
-    printf("ws1%-12.3S ws2\n", L"whidestring");
-    //ft_printf("wc%lc\n", 'c');
-    //printf("wc%C\n", 'k');
-    //ft_printf("hello %s %10%%-8stest\n","kaba", "lamine");
-    //printf("hello %s %10%%-8stest\n","kaba", "lamine");
-    //ft_printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
-    //printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
-    //printf("hello %s % 8.9d%s\n", "kaba", 123, "lamine");
     
+    printf("\n%d", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
     return 0;
 }

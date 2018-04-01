@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:37 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/27 02:58:44 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/03/30 04:33:33 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char *ft_parse1(char *s, t_p *p)
 {
-	int length;
 	ft_bzero(&p->f, sizeof(t_args));
 	while (*s)
 	{
@@ -114,7 +113,8 @@ char *ft_parse4(char *s, t_p *p)
 		return (s);
 	}
 	ft_conversion(p);
-	ft_addnode(p->f.str, ft_strlen(p->f.str), &p->head);
-	ft_struct_check(&p->f);
+	ft_addnode(p, p->f.str, ft_strlen(p->f.str));
+	//ft_addnode(p, ft_strlen(p->f.str), &p->head);
+	//ft_struct_check(&p->f);
 	return (s);
 }

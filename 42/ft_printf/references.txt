@@ -57,9 +57,36 @@ ISO quelconque, etc.
 • Gestion de modifieurs pour gérer les couleurs, les fd ou des choses fun comme ça :)
 printf("Le fichier {cyan}%s{eoc} contient : {red}%s{eoc}", filename, str) ;
 
+ s S p d D i o O u U x X c C
 
 
+ /* void ft_struct_check(t_args *flags)
+{
+    printf("plus: %d\n", flags->plus);
+    printf("min: %d\n", flags->min);
+    printf("space: %d\n", flags->space);
+    printf("hash: %d\n", flags->hash);
+    printf("zero: %d\n", flags->zero);
+    printf("prec: %d\n", flags->prec);
+    printf("precis: %d\n", flags->precis);
+    printf("field_w: %d\n", flags->field_w);
+    printf("length: %d\n", flags->length);
+    printf("type: %c\n", flags->type);
+} */
 
+
+if(CE_3(p->f.type, 'd', 'i','D'))
+	{
+		ft_putstr("im here\n");
+		p->f.sign = p->f.types.im < 0 ? '-' : p->f.sign;
+		p->f.plus = p->f.sign ? 0 : p->f.plus;
+		p->f.str = ft_strdup(ft_itoa((int)p->f.types.im));
+		/* p->f.str = (p->f.length != L) ? ft_strdup(ft_uitoabase((signed int)p->f.types.um, 10, 0)) : p->f.str;
+		p->f.str = (p->f.length == L || p->f.type == 'D') ? ft_strdup(ft_uitoabase((signed long)p->f.types.um, 10, 0)) : p->f.str;
+		p->f.str = (p->f.length == LL) ? ft_strdup(ft_uitoabase((signed long long)p->f.types.um, 8, 0)) : p->f.str;
+		p->f.str = (p->f.length == J) ? ft_strdup(ft_uitoabase((intmax_t)p->f.types.um, 10, 0)) : p->f.str; */
+	}	
+			
 https://stackoverflow.com/tour
 
 
