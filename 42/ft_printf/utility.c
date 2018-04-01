@@ -19,6 +19,7 @@ void ft_addnode(char *s1, int len, t_pfnode **head)
 
     if (s1 && len)
     {
+        
         str = (t_pfnode *)malloc(sizeof(t_pfnode));
         bzero(str, sizeof(t_pfnode));
         str->s = ft_strnew(len);
