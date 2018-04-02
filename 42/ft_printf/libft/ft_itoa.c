@@ -6,12 +6,11 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:03:54 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/30 02:56:44 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/01 12:51:43 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include "libft.h"	
 
 static size_t	digit_count(int64_t n)
 {

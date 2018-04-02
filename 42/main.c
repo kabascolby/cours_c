@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/31 16:23:32 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/01 11:56:11 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ void ft_struct_check(t_args *flags)
 int main()
 {
     
-    printf("\n%d", ft_printf("@moulitest: %#.o %#.0o", 0, 0));
+    printf("\n%d", ft_printf("% d", -42));
     return 0;
 }
