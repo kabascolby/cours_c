@@ -6,12 +6,13 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/01 11:56:11 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/03 19:42:09 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf/ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 void ft_struct_check(t_args *flags)
 {
@@ -29,7 +30,9 @@ void ft_struct_check(t_args *flags)
 
 int main()
 {
-    
-    printf("\n%d", ft_printf("% d", -42));
+    unsigned long l;
+    //unsigned short sh = USHRT_MAX;
+    printf("\n%d", ft_printf("%#p", 0));
+  // printf("\n%d", ft_printf("%3c", 0));
     return 0;
 }

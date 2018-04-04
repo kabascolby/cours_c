@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 20:15:44 by lkaba             #+#    #+#             */
-/*   Updated: 2018/03/30 02:51:33 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/03 19:53:04 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ typedef struct 		s_args
 	u_int8_t 		zero;
 	u_int8_t 		start;
 	u_int8_t 		prec;
-	unsigned int 	field_w;
+	int 			field_w;
 	unsigned int 	precis;
 	unsigned int 	length;
 	char 			type;
 	char 			*str;
 	unsigned int	sign;
-	unsigned int	len;
+	int				len;
 	int 			pos;
 	char 			fw;
 	t_value			types;
@@ -90,6 +90,7 @@ void 		format_conversion2(t_p *p);
 void 		format_conversion3(t_p *p);
 void 		ft_precision(t_p *p);
 void 		ft_field_width(t_p *p);
+void 		ft_field_width2(t_p *p);
 void 		flags_space_sign(t_p *p);
 void 		flags_zero(t_p *p);
 char 		*ft_frsplitstr(char **s, int j, char *s2);
