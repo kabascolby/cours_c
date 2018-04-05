@@ -4,7 +4,7 @@ https://www.freebsd.org/cgi/man.cgi?query=printf&apropos=0&sektion=3&manpath=Deb
 https://opensource.apple.com/source/xnu/xnu-344/osfmk/kern/printf.c
 
 
-*	Flags	Minimum field Width	.precision Maximum field width	Length	Convertion Type*	
+*	Flags	Minimum field Width	.precision Maximum field width	l	Convertion Type*	
 
 flags: # 0 - + _
 
@@ -69,8 +69,8 @@ printf("Le fichier {cyan}%s{eoc} contient : {red}%s{eoc}", filename, str) ;
     printf("zero: %d\n", flags->zero);
     printf("prec: %d\n", flags->prec);
     printf("precis: %d\n", flags->precis);
-    printf("field_w: %d\n", flags->field_w);
-    printf("length: %d\n", flags->length);
+    printf("f_w: %d\n", flags->f_w);
+    printf("l: %d\n", flags->l);
     printf("type: %c\n", flags->type);
 } */
 
@@ -78,13 +78,13 @@ printf("Le fichier {cyan}%s{eoc} contient : {red}%s{eoc}", filename, str) ;
 if(CE_3(p->f.type, 'd', 'i','D'))
 	{
 		ft_putstr("im here\n");
-		p->f.sign = p->f.types.im < 0 ? '-' : p->f.sign;
+		p->f.sign = IM< 0 ? '-' : p->f.sign;
 		p->f.plus = p->f.sign ? 0 : p->f.plus;
-		p->f.str = ft_strdup(ft_itoa((int)p->f.types.im));
-		/* p->f.str = (p->f.length != L) ? ft_strdup(ft_uitoabase((signed int)p->f.types.um, 10, 0)) : p->f.str;
-		p->f.str = (p->f.length == L || p->f.type == 'D') ? ft_strdup(ft_uitoabase((signed long)p->f.types.um, 10, 0)) : p->f.str;
-		p->f.str = (p->f.length == LL) ? ft_strdup(ft_uitoabase((signed long long)p->f.types.um, 8, 0)) : p->f.str;
-		p->f.str = (p->f.length == J) ? ft_strdup(ft_uitoabase((intmax_t)p->f.types.um, 10, 0)) : p->f.str; */
+		STR = ft_strdup(ft_itoa((int)p->f.types.im));
+		/* STR = (p->f.l != L) ? ft_strdup(ft_uitoabase((signed int)UM, 10, 0)) : STR;
+		STR = (p->f.l == L || p->f.type == 'D') ? ft_strdup(ft_uitoabase((signed long)UM, 10, 0)) : STR;
+		STR = (p->f.l == LL) ? ft_strdup(ft_uitoabase((signed long long)UM, 8, 0)) : STR;
+		STR = (p->f.l == J) ? ft_strdup(ft_uitoabase((intmax_t)UM, 10, 0)) : STR; */
 	}	
 			
 https://stackoverflow.com/tour
