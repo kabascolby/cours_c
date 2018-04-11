@@ -1,0 +1,9 @@
+references about filler.
+
+https://www.notion.so/Starfleet-2cc4eac8acdc4bbd83375e6777af1840
+https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html
+
+
+/resources/filler_vm -p1 ./lkaba.filler -p2 ./resources/players/abanlin.filler -f ./resources/maps/map00
+
+http://www.zentut.com/c-tutorial/c-read-text-file/

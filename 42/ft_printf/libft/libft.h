@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/30 13:33:59 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/02 07:10:22 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/06 13:58:28 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdlib.h>
+# include <wchar.h>
+# define NUMBERSET "0123456789abcdef0123456789ABCDEF"
 
 typedef struct	s_list
 {
@@ -21,6 +23,7 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_isdigit(int c);
@@ -93,4 +96,7 @@ int				ft_iswhitespace(char c);
 int				ft_countwords(char *str, char c);
 int				ft_strcchr(char *str, char c);
 char			*ft_strupcase(char *str);
+wchar_t			*ft_wstrdup(wchar_t *ws);
+char			*ft_uitoabase(uintmax_t val, int base, int opt);
+
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:12:07 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:12:08 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/06 14:01:29 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list	*remove(t_list *lst, void *ptr)
+static t_list	*lstremove(t_list *lst, void *ptr)
 {
 	t_list *temp;
 
@@ -24,7 +24,7 @@ static t_list	*remove(t_list *lst, void *ptr)
 		ft_memdel((void **)&lst);
 		return (temp);
 	}
-	lst->next = remove(lst->next, ptr);
+	lst->next = lstremove(lst->next, ptr);
 	return (lst);
 }
 
@@ -34,5 +34,5 @@ static t_list	*remove(t_list *lst, void *ptr)
 
 void			ft_lstremove(t_list **lst, void *ptr)
 {
-	*lst = remove(*lst, ptr);
+	*lst = lstremove(*lst, ptr);
 }

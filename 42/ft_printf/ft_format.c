@@ -6,24 +6,47 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/27 17:36:05 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/04 18:20:36 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/06 15:31:41 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
-	** if the flag zero is on then the field width is replaced by zero
-	** '0' is ignnored when '-' is present;
-	** the space depends also to the minus sign
-	** space is ignnored when '+' is on
-	** replace "length" by "l"
-	** replace "string split free  ft_frsplitstr" by "ft_spf"
+** if the flag zero is on then the field width is replaced by zero
+** '0' is ignnored when '-' is present;
+** the space depends also to the minus sign
+** space is ignnored when '+' is on
+** replace "length" by "l"
+** replace "string split free  ft_frsplitstr" by "ft_spf"
 */
-void ft_field_width(t_p *p)
+
+void	ft_precision(t_p *p)
 {
-	p->f.f_w -= (!p->f.types.c && CE_2(p->f.type, 'c', 'C') && p->f.f_w > 0) ? 1 : 0;
+	char f[p->f.precis ? p->f.precis + 1 : 1];
+
+	if (!p->f.prec)
+		return ;
+	if ((CE_5(p->f.type, 'd', 'i', 'D', 'o', 'O') ||
+				CE_5(p->f.type, 'x', 'X', 'p', 'u', 'U')) && p->f.precis)
+	{
+		p->f.zero = 0;
+		p->f.precis = (p->f.precis < p->f.len - p->f.sign) ?
+			0 : p->f.precis - p->f.len + p->f.sign;
+		f[p->f.precis] = '\0';
+		ft_memset((char *)f, '0', p->f.precis);
+		STR = ft_spf(&STR, 1 + p->f.sign, f);
+	}
+	if ((CE_2(p->f.type, 's', 'S')) && (p->f.precis < ft_strlen(STR)))
+		ft_memset((char *)&STR[p->f.precis], 0, 1);
+}
+
+void	ft_field_width(t_p *p)
+{
 	char f[p->f.f_w ? p->f.f_w + 1 : 1];
+
+	p->f.f_w -= (!p->f.types.c && CE_2(p->f.type, 'c', 'C') &&
+		p->f.f_w > 0) ? 1 : 0;
 	STR = (p->f.space && CE_2(p->f.type, 'd', 'i') && !p->f.sign) ?
 		ft_spf(&STR, 1, " ") : STR;
 	p->f.plus ? STR = ft_spf(&STR, 1, "+") : 0;
@@ -37,14 +60,15 @@ void ft_field_width(t_p *p)
 	p->f.fw = p->f.zero ? '0' : ' ';
 	ft_memset(f, p->f.fw, p->f.f_w);
 	STR = p->f.zero ? ft_spf(&STR, 1 + p->f.sign + p->f.plus, f) : STR;
-	p->f.pos = p->f.min ? p->f.len + 1 : (1 + p->f.plus - p->f.sign - p->f.plus);
+	p->f.pos = p->f.min ? p->f.len + 1 : (1 - p->f.sign);
 	STR = !p->f.zero ? ft_spf(&STR, p->f.pos, f) : STR;
 	ft_field_width2(p);
 }
 
-void ft_field_width2(t_p *p)
+void	ft_field_width2(t_p *p)
 {
 	char *s;
+
 	if (CE_2(p->f.type, 'o', 'O') && p->f.hash)
 	{
 		p->f.pos = p->f.min ? 1 : 1 + p->f.f_w;

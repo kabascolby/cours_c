@@ -66,6 +66,8 @@ FILES = ft_countwords.c\
 		ft_lstdel.c\
 		ft_abs.c\
 		ft_strchr.c\
+		ft_wstrdup.c\
+		ft_uitoabase.c\
 		ft_strupcase.c
 
 NAME = libft.a

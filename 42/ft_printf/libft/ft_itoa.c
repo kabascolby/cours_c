@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:03:54 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/02 07:17:12 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/06 13:51:21 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char			*ft_itoa(int64_t n)
 	char	*str;
 	char	neg;
 
-	if(n == INTMAX_MIN)
+	if (n == INTMAX_MIN)
 		return (ft_strdup("-9223372036854775808"));
 	neg = (n < 0 ? 1 : 0);
 	count = digit_count(n);
