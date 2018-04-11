@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/10 20:51:23 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/10 21:15:51 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@ void ft_writefd(char *buff, ssize_t *fd)
 }
 
 
-/* int ft_parse1(t_f *f)
+int ft_parse1(t_f *f)
 {
-	return(0);
-} */
+}
 
 int				main()
 {
 	char		*buff;
 	ssize_t		fd;
 	t_f			f;
-		
+	static		t_board b;
 	ft_putstr_fd("[3, 8]", 1);
 	ft_bzero(&f, sizeof(t_f));
 	unlink("file.txt"); //delete it later
