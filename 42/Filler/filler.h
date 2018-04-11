@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 /*
-** w : map width, h: map_height, m_x : my "x", m_y : my "y",
-** e_x : enemie's "x", e_enmie's : y,
-**
+** w	: map width, 	|h			: map_height| 	m_x		: my "x", 		|m_y : my "y",
+** e_x	: enemie's "x", |e_enmie's 	: y,		|	p 		: player status,|
+** fm	: full map,		|sm			: small map	|	
 */
 
 #ifndef FILLER_H
@@ -24,28 +24,27 @@
 # include <sys/types.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define BUFF_SIZE 520
 
 typedef struct	s_board
 {
 	size_t	w;
 	size_t	h;
 	size_t	p;
-	size_t	
+	//size_t		
 	ssize_t	m_x;
 	ssize_t	m_y;
 	ssize_t	e_x;
 	ssize_t	e_y;
 	char	**fm;
 	char	**sm;
-}			t_board;
+}			t_b;
 
 typedef struct	s_f
 {
-	t_board	p;
+	t_b		p;
 }				t_f;
 
-void ft_writefd(char *buff, ssize_t *fd);
-int ft_parse1(t_f *f);
-void ft_closefd(int *fd);
+void	ft_writefd(char *buff, ssize_t *fd);
+void	ft_parse1(char *buff, t_b *b);
+void	ft_closefd(int *fd);
 #endif

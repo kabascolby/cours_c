@@ -1,5 +1,5 @@
-seed = 2028
-O: timedout
+seed = 8506
+O: error on input
 ./resources/players/abanlin.filler won
 Score:
-0AGAINST145
+0AGAINST0
