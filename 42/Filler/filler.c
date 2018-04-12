@@ -15,9 +15,10 @@
 
 void	ft_writefd(char *buff, t_b *b)
 {
+	free(buff);
 	b->fd = open("file.txt", O_RDWR|O_CREAT|O_APPEND, 0755);		
-	write(b->fd, buff, ft_strlen(buff));
-	write(b->fd, "\n", 1);
+	/* write(b->fd, buff, ft_strlen(buff));
+	write(b->fd, "\n", 1); */
 }
 
 
@@ -33,7 +34,7 @@ void	ft_parse1(char *buff, t_b *b)
 	buff +=	8;
 	b->h = ft_atoi(buff);
 	b->w = ft_atoi(ft_strchr(buff, ' '));
-	//dprintf(b->fd,"\nplayer:%lu |buff: %swidth: %lu |height: %lu\n", b->p, buff, b->w, b->h);
+	dprintf(b->fd,"\nplayer:%lu |buff: %swidth: %lu |height: %lu\n", b->p, buff, b->w, b->h);
 	get_next_line(0, &buff);
 	b->fm = (char **)malloc(sizeof(char *) * b->h);
 	i = 0;
