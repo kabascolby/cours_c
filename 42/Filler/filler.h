@@ -15,7 +15,6 @@
 ** e_x	: enemie's "x", |e_enmie's 	: y,		|	p 		: player status,|
 ** fm	: full map,		|sm			: small map	|	
 */
-
 #ifndef FILLER_H
 # define FILLER_H
 # include "libft/libft.h"
@@ -23,23 +22,30 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <unistd.h>
+#include <stdio.h> //dellete later
 # define NUM(c) ((c) - '0')
 
 typedef struct	s_board
 {
-	size_t	w;
-	size_t	h;
-	size_t	p;
+	size_t		w;
+	size_t		h;
+	size_t		p;
 	int fd;
 	//size_t		
 	int	m_x;
 	int	m_y;
 	int	e_x;
 	int	e_y;
-	char	**fm;
-	char	**sm;
-}			t_b;
+	//uint64_t	c = '........';
+	
+	char		**fm;
+	char		**sm;
+}				t_b;
+
+//*((uint64_t *)(adsf->fm[row] + 24)) != adf
+
 
 typedef struct	s_f
 {
@@ -48,5 +54,7 @@ typedef struct	s_f
 
 void	ft_writefd(char *buff, t_b *b);
 void	ft_parse1(char *buff, t_b *b);
-void	ft_closefd(int *fd);
+void 	board_set(char *buff, t_b *b);
+void 	ft_position(t_b *b);
+void	ft_closefd(int *fd); //dellete it later
 #endif
