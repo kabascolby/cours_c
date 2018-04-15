@@ -2,12 +2,8 @@
 
 void board_set(char *buff, t_b *b)
 {
-	size_t i;
+	uint16_t i;
 
-	b->fm = (char **)malloc(sizeof(char *) * b->h);
-	i = -1;
-	while (++i < b->h)
-		b->fm[i] = ft_strnew(b->w);
 	i = -1;
 	while(++i < b->h)
 	{
@@ -22,17 +18,32 @@ void board_set(char *buff, t_b *b)
 
 void ft_position(t_b *b)
 {
-    unsigned i;
-    int k;
-
-    k = ft_strlen(b->fm[0]);
-    
-    i = 1;
-	while (++i < (b->w * b->h))
-		if (b->fm[i / k][i % k] == 'O')
+    int16_t i;
+    int16_t j;
+	char c;
+    i = -1;
+	while (++i < b->h)
+	{		j = -1;
+		while(++j < b->w)
 		{
-			b->m_x = (i / k) + b->w;
-			b->m_y = (i % k) + b->h;
+			if(b->fm[i][j] == 'X')
+			{
+				b->m_x = j;
+				b->m_y = i;
+			}
 		}
-    dprintf(b->fd,"\n m_x :%d| m_y : %d | k : %d\n", b->m_x, b->m_y, k);
+	}
+	i = -1;
+	while (++i < b->h)
+	{		j = -1;
+		while(++j < b->w)
+		{
+			if(b->fm[i][j] == 'O')
+			{
+				b->e_x = j;
+				b->e_y = i;
+			}
+		}
+	}	
+    dprintf(b->fd,"\n m_x :%d| m_y : %d | e_x :%d| e_y : %d | k : %d\n", b->m_x, b->m_y, b->e_x, b->e_y, b->w * b->h);
 }

@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/11 14:47:21 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/13 17:27:41 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@
 
 typedef struct	s_board
 {
-	size_t		w;
-	size_t		h;
-	size_t		p;
+	uint16_t		w;
+	uint16_t		h;
+	uint8_t			p;
 	int fd;
-	//size_t		
+	//uint16_t		
 	int	m_x;
 	int	m_y;
 	int	e_x;
 	int	e_y;
-	//uint64_t	c = '........';
+	//uint64_t		c ='........';
 	
 	char		**fm;
 	char		**sm;
