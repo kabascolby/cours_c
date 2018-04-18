@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/13 17:27:41 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/16 17:55:47 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
-#include <stdio.h> //dellete later
+# include <stdio.h> //dellete later
+# include <ctype.h>
 # define NUM(c) ((c) - '0')
+# define CE_(a, b) ((a) == (b))
+# define CE_2(a, b, c) (CE_(a, b) || CE_(a, c))
+# define CE_3(a, b, c, d) (CE_(a, b) || CE_(a, c) || CE_(a, d))
 
 typedef struct	s_board
 {
@@ -41,7 +45,7 @@ typedef struct	s_board
 	//uint64_t		c ='........';
 	
 	char		**fm;
-	char		**sm;
+	char			**sm;
 }				t_b;
 
 //*((uint64_t *)(adsf->fm[row] + 24)) != adf
@@ -56,5 +60,6 @@ void	ft_writefd(char *buff, t_b *b);
 void	ft_parse1(char *buff, t_b *b);
 void 	board_set(char *buff, t_b *b);
 void 	ft_position(t_b *b);
+void	ft_printboard(t_b *b);
 void	ft_closefd(int *fd); //dellete it later
 #endif

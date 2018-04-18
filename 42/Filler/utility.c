@@ -20,30 +20,59 @@ void ft_position(t_b *b)
 {
     int16_t i;
     int16_t j;
-	char c;
+    int16_t k;
+	int16_t l;
+	//int16_t m;
+
     i = -1;
 	while (++i < b->h)
 	{		j = -1;
 		while(++j < b->w)
 		{
-			if(b->fm[i][j] == 'X')
+			b->fm[i][j] = b->fm[i][j] == '.' ? 0 : b->fm[i][j];
+			if(CE_2(b->fm[i][j], 'X', 'O'))
 			{
-				b->m_x = j;
-				b->m_y = i;
+				b->fm[i][j] = b->fm[i][j] == 'O' && b->p == 1 ? -1 : b->fm[i][j];
+				b->fm[i][j] = b->fm[i][j] == 'O' && b->p == 2 ? -2 : b->fm[i][j];
+				b->fm[i][j] = b->fm[i][j] == 'X' && b->p == 1 ? -2 : b->fm[i][j];
+				b->fm[i][j] = b->fm[i][j] == 'X' && b->p == 2 ? -1 : b->fm[i][j];
+			}	
+		}
+	}
+	ft_printboard(b); //detete it later
+	
+	i = -1;
+	
+	while (++i < b->h)
+	{		j = -1;
+			k  = 1;
+			l = -2;
+		while(++j < b->w)
+		{			
+			if((b->fm[i][j] == l) && (b->fm[i][j + 1] != l))
+			{
+				b->fm[i][j + 1] = k ;
+				l = k++;
+				k = l + 1;
 			}
 		}
 	}
+   // dprintf(b->fd,"\n m_x :%d| m_y : %d | e_x :%d| e_y : %d | k : %d\n", b->m_x, b->m_y, b->e_x, b->e_y, b->w * b->h);
+	ft_printboard(b); //detete it later
+}
+void ft_printboard(t_b *b)
+{
+	int i;
+	int j;
+
 	i = -1;
-	while (++i < b->h)
-	{		j = -1;
+		dprintf(b->fd, "%c\n", -1);
+	
+	while(++i < b->h)
+	{
+		j = -1;
 		while(++j < b->w)
-		{
-			if(b->fm[i][j] == 'O')
-			{
-				b->e_x = j;
-				b->e_y = i;
-			}
-		}
-	}	
-    dprintf(b->fd,"\n m_x :%d| m_y : %d | e_x :%d| e_y : %d | k : %d\n", b->m_x, b->m_y, b->e_x, b->e_y, b->w * b->h);
+			dprintf(b->fd, "%d", b->fm[i][j]);
+		dprintf(b->fd, "\n");
+	}
 }
