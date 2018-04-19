@@ -15,14 +15,15 @@ void board_set(char *buff, t_b *b)
 	while(i < b->h) //delete Later
 		dprintf(b->fd,"%s\n", b->fm[i++]);
 }
-
+/*
+** ft_position give a negative 2 of all the position of my enemie
+** negative one to all my position. And zero to all other position.
+** In that way I can calculateall the possibility I have to reach my enemie.
+*/
 void ft_position(t_b *b)
 {
-    int16_t i;
-    int16_t j;
-    int16_t k;
-	int16_t l;
-	//int16_t m;
+    uint16_t i;
+    uint16_t j;
 
     i = -1;
 	while (++i < b->h)
@@ -40,26 +41,61 @@ void ft_position(t_b *b)
 		}
 	}
 	ft_printboard(b); //detete it later
-	
+	fill_board(b);
+}
+void fill_board(t_b *b)
+{
+	int16_t i;
+	int16_t j;
+	//int16_t k;
+
 	i = -1;
-	
-	while (++i < b->h)
-	{		j = -1;
-			k  = 1;
-			l = -2;
-		while(++j < b->w)
-		{			
-			if((b->fm[i][j] == l) && (b->fm[i][j + 1] != l))
-			{
-				b->fm[i][j + 1] = k ;
-				l = k++;
-				k = l + 1;
+	while(++i < b->w)
+	{
+		j = -1;
+		while(++j < b->h)
+		{
+			if(b->fm[i][j] == -2)
+            {
+                b->e_x = j;
+                b->e_y = i;
+				k  = -1;
+				
+				b->fm[i][j + 1] = (j + 1 < b->w) && (b->fm[i][j + 1] == 0) ? 1 : b->fm[i][j + 1];
+				b->fm[i][j - 1] = (j - 1 > 0) && (b->fm[i][j - 1] == 0) ? 1 : b->fm[i][j - 1];
+				b->fm[i + 1][j] = ((i + 1 < b->h) && (b->fm[i + 1][j] == 0)) ? 1 : b->fm[i + 1][j];
+				b->fm[i - 1][j] = ((i - 1 > 0) && (b->fm[i + 1][j] == 0)) ? 1 : b->fm[i - 1][j];
+				
+				b->fm[i + 1][j - 1] = (j - 1 > 0) && (b->fm[i][j + 1] == 0) ? 1 : b->fm[i][j + 1];
+				b->fm[i][j + 1] = (j + 1 < b->w) && (b->fm[i][j + 1] == 0) ? 1 : b->fm[i][j + 1];
+				b->fm[i][j + 1] = (j + 1 < b->w) && (b->fm[i][j + 1] == 0) ? 1 : b->fm[i][j + 1];
+				b->fm[i][j + 1] = (j + 1 < b->w) && (b->fm[i][j + 1] == 0) ? 1 : b->fm[i][j + 1];
+				break;
+
 			}
+				ft_fillboard2(b);
 		}
 	}
-   // dprintf(b->fd,"\n m_x :%d| m_y : %d | e_x :%d| e_y : %d | k : %d\n", b->m_x, b->m_y, b->e_x, b->e_y, b->w * b->h);
-	ft_printboard(b); //detete it later
+
 }
+
+void ft_fillboard2(t_b *b)
+{
+	int16_t i;
+	int16_t j;
+	
+	i = 0;	
+	neighbor = 0;
+	while (++i < b->h)
+	{		j = -1;
+		while(++j < b->w)
+		{
+			b->fm[b->e_x][b->e_y]
+
+		}
+	}
+}
+
 void ft_printboard(t_b *b)
 {
 	int i;
