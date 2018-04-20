@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/18 16:50:22 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/19 18:43:55 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	ft_parse1(char *buff, t_b *b);
 void 	board_set(char *buff, t_b *b);
 void 	ft_position(t_b *b);
 void	ft_printboard(t_b *b);
-void 	fill_board(t_b *b);
+void	fill_board(t_b *b, int l, int n, int m);
 void	ft_closefd(int *fd); //dellete it later
 #endif
