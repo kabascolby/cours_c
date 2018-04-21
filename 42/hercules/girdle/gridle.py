@@ -5,7 +5,7 @@ import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 
-fromaddr = "ladainianwade@gmail.com"
+fromaddr = "kabascolby@gmail.com"
 passwd = getpass.getpass('your email server password : ')
 toaddr = raw_input("ADDRESS YOU WANT TO SEND TO:")
 subj = raw_input("SUBJECT OF MAIL:")
@@ -23,5 +23,5 @@ server.starttls()
 server.login(fromaddr, passwd)
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
-print "Email sent!"
+print "Email sent with success!"
 server.quit()

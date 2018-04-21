@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/19 18:43:55 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/21 12:29:57 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ typedef struct	s_board
 	uint16_t		w;
 	uint16_t		h;
 	uint8_t			p;
+	uint16_t		p_w;
+	uint16_t		p_h;
 	int fd;
 	//uint16_t		
 	int	m_x;
@@ -45,7 +47,7 @@ typedef struct	s_board
 	//uint64_t		c ='........';
 	
 	char		**fm;
-	char			**sm;
+	char		**Piece;
 }				t_b;
 
 //*((uint64_t *)(adsf->fm[row] + 24)) != adf
@@ -57,10 +59,12 @@ typedef struct	s_f
 }				t_f;
 
 void	ft_writefd(char *buff, t_b *b);
-void	ft_parse1(char *buff, t_b *b);
+void	parse1(char *buff, t_b *b);
+void	parse2(char *buff, t_b *b);
 void 	board_set(char *buff, t_b *b);
 void 	ft_position(t_b *b);
 void	ft_printboard(t_b *b);
-void	fill_board(t_b *b, int l, int n, int m);
+void 	fill_board(t_b *b, int l, int n, int m);
+//void	fill_board2(t_b *b);
 void	ft_closefd(int *fd); //dellete it later
 #endif
