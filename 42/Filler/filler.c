@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/21 12:30:43 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/23 18:04:50 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,33 @@ void	parse1(char *buff, t_b *b)
 	i = -1;
 	while (++i < b->h)
 		b->fm[i] = ft_strnew(b->w);
-	b->p == 1 ? parse2(buff, b) : 0;
 	board_set(buff, b);
-	ft_position(b);	
+	parse2(buff, b);	
+	ft_position(b);
 }
 void	parse2(char *buff, t_b *b)
 {
+	uint16_t i;
+
 	get_next_line(0, &buff);
-	b->p_h = ft_atoi(ft_strchr(buff, ' '));
+	buff +=	6;
+	b->p_h = ft_atoi(buff);
 	b->p_w = ft_atoi(ft_strchr(buff, ' '));
-	dprintf(b->fd,"\nbuff:%s width: %hd |height: %hd\n", buff, b->p_w, b->p_h);// delete it later
+	dprintf(b->fd,"buff:%s width: %hd |height: %hd\n", buff, b->p_w, b->p_h); // delete it later
+	b->piece = (char **)malloc(sizeof(char *) * b->p_h);
+	i = -1;
+	while (++i < b->p_h)
+		b->piece[i] = ft_strnew(b->p_w);
+	i = -1;
+	while(++i < b->p_h)
+	{
+		get_next_line(0, &buff);
+		ft_strcpy(b->piece[i], buff);
+		free(buff);
+	}
+	/* i = -1;
+	while(++i < b->p_h) //delete Later
+		dprintf(b->fd,"%s\n", b->piece[i]); */
 }
 
 int				main()

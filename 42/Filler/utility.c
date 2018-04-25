@@ -11,9 +11,7 @@ void board_set(char *buff, t_b *b)
 		ft_strcpy(b->fm[i], &(buff[4]));
 		free(buff);
 	}
-	i = 0;
-	while(i < b->h) //delete Later
-		dprintf(b->fd,"%s\n", b->fm[i++]);
+	//ft_printboard(b);
 }
 /*
 ** ft_position give a negative 2 of all the position of my enemie
@@ -37,17 +35,17 @@ void ft_position(t_b *b)
 			b->fm[i][j] = b->fm[i][j] == '.' ? 0 : b->fm[i][j];
 			if(CE_2(b->fm[i][j], 'X', 'O'))
 			{
-				b->fm[i][j] = b->fm[i][j] == 'O' && b->p == 1 ? -1 : b->fm[i][j];
-				b->fm[i][j] = b->fm[i][j] == 'O' && b->p == 2 ? -2 : b->fm[i][j];
-				b->fm[i][j] = b->fm[i][j] == 'X' && b->p == 1 ? -2 : b->fm[i][j];
-				b->fm[i][j] = b->fm[i][j] == 'X' && b->p == 2 ? -1 : b->fm[i][j];
+				b->fm[i][j] == 'O' && b->p == 1 ? b->fm[i][j] = -1 : 0;
+				b->fm[i][j] == 'O' && b->p == 2 ? b->fm[i][j] = -2 : 0;
+				b->fm[i][j] == 'X' && b->p == 1 ? b->fm[i][j] = -2 : 0;
+				b->fm[i][j] == 'X' && b->p == 2 ? b->fm[i][j] = -1 : 0;
 			}	
 		}
 	}
 	ft_printboard(b); //detete it later
 	fill_board(b, 0 , -2,  1);
 	k = 0;
-	while(++k < b->w)
+	while(++k < b->h)
 		fill_board(b, 0, k , k + 1);
 	ft_printboard(b); //detete it later
 
@@ -79,6 +77,12 @@ void fill_board(t_b *b, int l, int n, int m)
 	}
 	//ft_printboard(b); //detete it later
 }
+
+/* void decision(t_b *b)
+{
+	uint16_t
+
+} */
 
 void ft_printboard(t_b *b)
 {

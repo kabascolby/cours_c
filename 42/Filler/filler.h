@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/21 12:29:57 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/23 17:52:17 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct	s_board
 	//uint64_t		c ='........';
 	
 	char		**fm;
-	char		**Piece;
+	char		**piece;
 }				t_b;
 
 //*((uint64_t *)(adsf->fm[row] + 24)) != adf
