@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utility.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
+/*   Updated: 2018/04/26 17:38:52 by lkaba            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "filler.h"
 
 void board_set(char *buff, t_b *b)
@@ -45,7 +57,7 @@ void ft_position(t_b *b)
 	ft_printboard(b); //detete it later
 	fill_board(b, 0 , -2,  1);
 	k = 0;
-	while(++k < b->h)
+	while(++k < b->w)
 		fill_board(b, 0, k , k + 1);
 	ft_printboard(b); //detete it later
 

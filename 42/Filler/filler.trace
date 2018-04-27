@@ -1,6 +1,5 @@
-seed = 5836
+seed = 4212
 X: error on input
-./lkaba.filler: Segfault at 0
 ./resources/players/abanlin.filler won
 Score:
-814AGAINST0
+1AGAINST0

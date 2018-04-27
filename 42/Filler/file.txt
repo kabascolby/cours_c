@@ -1,2 +1,2 @@
 
-player:2 |buff: 100 99:width: 99 |height: 100
+player:2 |buff: 24 40:width: 40 |height: 24
