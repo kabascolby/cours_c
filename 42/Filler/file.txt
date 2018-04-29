@@ -1,2 +1,9 @@
 
 player:2 |buff: 24 40:width: 40 |height: 24
+buff:4 5: width: 5 |height: 4
+.**..
+..***
+.....
+.....
+b->sum = -1
+ 

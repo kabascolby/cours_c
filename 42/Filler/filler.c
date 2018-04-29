@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/26 18:39:35 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/28 13:13:00 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	parse2(char *buff, t_b *b)
 		free(buff);
 	}
 	/*
-	** t reduce the map i have to get the adjusted coordinate of the map
+	** to reduce the map I have to get the adjusted coordinate of the map
 	** head calculation; 
 	*/
 	 b->h_y = -1;

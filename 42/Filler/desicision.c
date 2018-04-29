@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/26 19:26:59 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/28 20:04:28 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void init_coord(int16_t coord[4])
 {
 	int i = -1;
 	while (++i < 4)
-		coord[i] = 0;
+		coord[i] = -1;
 }
 int compare_sums(int16_t temp, int16_t sum, int16_t coord[4], uint16_t count[4])
 {
@@ -63,15 +63,9 @@ void bestfit(t_b *b)
 	b->sum = -1;
 	while (++count[0] < b->h)
 	{
-		count[1] = -1;
 		while (++count[1] < b->w)
-		{
 			if (b->fm[count[0]][count[1]] == -1)
-			{
-				count[2] = -1;
 				while (++count[2] < b->p_h)
-				{
-					count[3] = -1;
 					while (++count[3] < b->p_w)
 						if (b->piece[count[2]][count[3]] == '*')
 						{
@@ -88,13 +82,8 @@ void bestfit(t_b *b)
 								b->sum = temp;
 							}
 						}
-				}
-			}
-		}
 	}
 	dprintf(b->fd, "b->sum = %d\n", b->sum);
-	//dprintf(b->fd, "coord1 = %d\n", (coord[2] + b->h_x) + coord[0]);
-	//dprintf(b->fd, "coord2 = %d\n", (coord[3] + b->h_y) + coord[1]);
 	ft_putnbr_fd(b->fd, (coord[2] - b->h_x) + coord[0]);
 	ft_putstr_fd(" ", b->fd);
 	
