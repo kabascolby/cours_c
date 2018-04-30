@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/28 13:13:00 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/30 12:48:10 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	parse1(char *buff, t_b *b)
 	buff +=	8;
 	b->h = ft_atoi(buff);
 	b->w = ft_atoi(ft_strchr(buff, ' '));
-	dprintf(b->fd,"\nplayer:%hhd |buff: %swidth: %hd |height: %hd\n", b->p, buff, b->w, b->h); // delete it later
+	//dprintf(b->fd,"\nplayer:%hhd |buff: %swidth: %hd |height: %hd\n", b->p, buff, b->w, b->h); // delete it later
 	get_next_line(0, &buff);
 	b->fm = (char **)malloc(sizeof(char *) * b->h);
 	i = -1;
@@ -47,7 +47,7 @@ void	parse2(char *buff, t_b *b)
 	buff +=	6;
 	b->p_h = ft_atoi(buff);
 	b->p_w = ft_atoi(ft_strchr(buff, ' '));
-	dprintf(b->fd,"buff:%s width: %hd |height: %hd\n", buff, b->p_w, b->p_h); // delete it later
+	//dprintf(b->fd,"buff:%s width: %hd |height: %hd\n", buff, b->p_w, b->p_h); // delete it later
 	b->piece = (char **)malloc(sizeof(char *) * b->p_h);
 	i = -1;
 	while (++i < b->p_h)
@@ -60,8 +60,8 @@ void	parse2(char *buff, t_b *b)
 		free(buff);
 	}
 	/*
-	** to reduce the map I have to get the adjusted coordinate of the map
-	** head calculation; 
+	** to reduce the map size by excluding all the '.', I have to get the adjusted coordinate of the map
+	**  I save the position of the first '*'; 
 	*/
 	 b->h_y = -1;
 	while (++b->h_y < b->p_h)

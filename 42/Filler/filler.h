@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/26 17:08:39 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/30 12:51:20 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include <unistd.h>
 # include <stdio.h> //dellete later
 # include <ctype.h>
+# include <limits.h>
 # define NUM(c) ((c) - '0')
 # define CE_(a, b) ((a) == (b))
 # define CE_2(a, b, c) (CE_(a, b) || CE_(a, c))
@@ -66,7 +67,9 @@ void 	board_set(char *buff, t_b *b);
 void 	ft_position(t_b *b);
 void	ft_printboard(t_b *b);
 void 	fill_board(t_b *b, int l, int n, int m);
-//void	fill_board2(t_b *b);
 void	ft_closefd(int *fd); //dellete it later
-void bestfit(t_b *b);
+void 	bestfit(t_b *b);
+void 	init_count(int16_t *T, uint8_t len, int val);
+int16_t sumpath(t_b *b, int i, int j);
+
 #endif

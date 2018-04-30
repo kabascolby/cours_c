@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/28 13:13:03 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/30 13:24:34 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void ft_position(t_b *b)
 	k = 0;
 	while(++k < b->w)
 		fill_board(b, 0, k , k + 1);
-	//ft_printboard(b); //detete it later
+	ft_printboard(b); //detete it later
 
 	
 }
@@ -90,11 +90,11 @@ void fill_board(t_b *b, int l, int n, int m)
 	//ft_printboard(b); //detete it later
 }
 
-/* void decision(t_b *b)
+void init_count(int16_t *T, uint8_t len, int val)
 {
-	uint16_t
-
-} */
+	while (--len)
+		*T++ = val;
+}
 
 void ft_printboard(t_b *b)
 {
