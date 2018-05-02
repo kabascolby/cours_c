@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/30 12:51:20 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/04/30 18:31:11 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,12 @@ typedef struct	s_board
 	int	h_y;
 	int	p_x;
 	int	p_y;
-	int sum;
+	uint16_t sum;
+	int16_t i;
+	int16_t j;
+	int16_t k;
+	int16_t l;
+
 	//uint64_t		c ='........';
 	
 	char		**fm;
@@ -68,8 +73,8 @@ void 	ft_position(t_b *b);
 void	ft_printboard(t_b *b);
 void 	fill_board(t_b *b, int l, int n, int m);
 void	ft_closefd(int *fd); //dellete it later
-void 	bestfit(t_b *b);
+void 	bestpos_fm(t_b *b);
 void 	init_count(int16_t *T, uint8_t len, int val);
-int16_t sumpath(t_b *b, int i, int j);
+int16_t sumpath(t_b *b);
 
 #endif
