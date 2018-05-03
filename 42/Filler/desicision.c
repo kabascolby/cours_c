@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/02 18:20:43 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/02 18:27:32 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,13 @@ uint16_t	sumpath(t_b *b)
 	{
 		j = -1;
 		while (++j < b->p_w)
+		{
 			if (b->piece[i][j] == '*')
 			{
-				sum += (b->fm[(i - b->k) + b->fm_i][(j - b->l) + b->fm_j]);
-				dprintf(b->fd, "sum = %d(i = %d, j = %d)\n", sum, ((i - b->k) + b->fm_i),(j - b->l) + b->fm_j);		
+				sum += b->fm[i - b->fm_i][j - b->fm_j];
+				dprintf(b->fd, "sum = %d | (i = %d, j = %d)\n", sum, (i - b->fm_i),(j - b->fm_j));		
 			}
+		}
 	}
 	return (sum);
 }
