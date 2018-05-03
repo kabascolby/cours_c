@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/02 18:27:32 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/02 19:53:57 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,11 @@ uint16_t	sumpath(t_b *b)
 	{
 		j = -1;
 		while (++j < b->p_w)
-		{
 			if (b->piece[i][j] == '*')
 			{
-				sum += b->fm[i - b->fm_i][j - b->fm_j];
-				dprintf(b->fd, "sum = %d | (i = %d, j = %d)\n", sum, (i - b->fm_i),(j - b->fm_j));		
+				sum += b->fm[b->cur_i + (i - b->h_x)][b->cur_j + (j - b->h_y)];
+				dprintf(b->fd, "sum = %d | (i = %d, j = %d)\nfmi: %d, fmj: %d\n", sum, (i - b->h_x) , (j - b->h_y), b->fm_i, b->fm_j);		
 			}
-		}
 	}
 	return (sum);
 }
@@ -61,6 +59,8 @@ uint16_t	bestpos_piece(t_b *b)
 					sum = temp;
 					b->k = i;
 					b->l = j;
+					//dprintf(b->fd, "(coord_i = %d, coord_j = %d)\n", i, j);
+					
 				}
 			}
 	}
@@ -81,6 +81,8 @@ void	bestpos_fm(t_b *b)
 		while (++j < b->w)
 			if (b->fm[i][j] == -1)
 			{
+				b->cur_i = i;
+				b->cur_j = j;
 				temp = bestpos_piece(b);
 				if ((b->sum > temp) && (temp))
 				{

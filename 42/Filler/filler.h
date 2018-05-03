@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/02 17:34:09 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/02 19:46:43 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct	s_board
 	uint16_t sum;
 	int16_t fm_i;
 	int16_t fm_j;
+	int16_t cur_i;
+	int16_t cur_j;
 	int16_t k;
 	int16_t l;
 
