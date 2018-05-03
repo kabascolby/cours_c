@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/30 12:48:10 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/02 17:47:47 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_writefd(char *buff, t_b *b)
 }
 
 void	parse1(char *buff, t_b *b)
-{
+{	
 	uint16_t i;
 
 	ft_writefd(buff, b);
@@ -37,11 +37,14 @@ void	parse1(char *buff, t_b *b)
 		b->fm[i] = ft_strnew(b->w);
 	board_set(buff, b);
 	ft_position(b);
-	parse2(buff, b);	
+	parse2(buff, b);
+	bestpos_fm(b);
+		
 }
 void	parse2(char *buff, t_b *b)
 {
 	uint16_t i;
+	uint16_t j;
 
 	get_next_line(0, &buff);
 	buff +=	6;
@@ -63,21 +66,24 @@ void	parse2(char *buff, t_b *b)
 	** to reduce the map size by excluding all the '.', I have to get the adjusted coordinate of the map
 	**  I save the position of the first '*'; 
 	*/
-	 b->h_y = -1;
-	while (++b->h_y < b->p_h)
-	{		b->h_x = -1;
-		while(++b->h_x < b->p_w)
+	i = -1;	 
+	while (++i < b->p_h)
+	{		j = -1;
+		while(++j < b->p_w)
 		{
-			if(b->piece[b->h_y][b->h_x] == '*')
+			if(b->piece[i][j] == '*')
+			{
+				b->h_x = i;
+				b->h_y = j;
 				break;
+			}
 		}
-		if(b->piece[b->h_y][b->h_x] == '*')
+		if(b->piece[i][j] == '*')
 				break;
 	}
 	i = -1;
 	while(++i < b->p_h) //delete Later
 		dprintf(b->fd,"%s\n", b->piece[i]);
-	bestfit(b);
 }
 
 int				main()
