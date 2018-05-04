@@ -1,14 +1,14 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   desicision.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#             */
-/*   Updated: 2018/04/30 14:32:13 by lkaba            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    desicision.1.txt                                   :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#              #
+#    Updated: 2018/05/03 18:02:19 by lkaba            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 #include "filler.h"
 
@@ -27,7 +27,7 @@ int16_t sumpath(t_b *b, int i, int j)
 		x = -1;
 		while (++x < b->p_w)
 			if (b->piece[y][x] == '*')
-				sum += (b->fm[(y - b->h_y) + i][(x - b->h_x) + j]);
+				sum += (b->fm[(y - b->p_hj) + i][(x - b->p_hi) + j]);
 	}
 	dprintf(b->fd, "sum = %d\n", sum);
 	return (sum);
@@ -78,22 +78,22 @@ void bestfit(t_b *b)
 			}
 		}
 	}
-	dprintf(b->fd, "\n y = %d , x = %d\n",((k - b->h_y) + i), ((l - b->h_x) + j));
+	dprintf(b->fd, "\n y = %d , x = %d\n",((k - b->p_hj) + i), ((l - b->p_hi) + j));
 	
-	ft_putnbr((k - b->h_y) + i);
+	ft_putnbr((k - b->p_hj) + i);
 	ft_putchar(' ');
-	ft_putnbr((l - b->h_x) + j);
+	ft_putnbr((l - b->p_hi) + j);
 	ft_putchar('\n');
 
 	
 							
 	/* dprintf(b->fd, "b->sum = %d\n", b->sum);
-	ft_putnbr_fd((coord[2] - b->h_x) + coord[0], b->fd);
+	ft_putnbr_fd((coord[2] - b->p_hi) + coord[0], b->fd);
 	ft_putstr_fd(" ", b->fd);
-	ft_putnbr_fd((coord[3] - b->h_y) + coord[1], b->fd);
+	ft_putnbr_fd((coord[3] - b->p_hj) + coord[1], b->fd);
 	
-	b->sum != -1 ? ft_putnbr((coord[2] + b->h_x) + coord[0]) : 0;
+	b->sum != -1 ? ft_putnbr((coord[2] + b->p_hi) + coord[0]) : 0;
 	ft_putchar(' ');
-	b->sum != -1 ? ft_putnbr((coord[3] + b->h_y) + coord[1]) : 0;
+	b->sum != -1 ? ft_putnbr((coord[3] + b->p_hj) + coord[1]) : 0;
 	ft_putchar('\n'); */
 }

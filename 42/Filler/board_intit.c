@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utility.c                                          :+:      :+:    :+:   */
+/*   board_intit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/02 16:59:20 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/03 20:32:07 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ void ft_position(t_b *b)
     uint16_t i;
     uint16_t j;
 	uint16_t k;
-	//int n;
-	//int m;
-	//int l;
-
+	
     i = -1;
 	while (++i < b->h)
 	{		j = -1;
@@ -58,7 +55,7 @@ void ft_position(t_b *b)
 	k = 0;
 	while(++k < b->w)
 		fill_board(b, 0, k , k + 1);
-	ft_printboard(b); //detete it later
+	//ft_printboard(b); //detete it later
 
 	
 }

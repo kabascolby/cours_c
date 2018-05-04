@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 11:49:24 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/02 17:47:47 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/03 20:51:12 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,24 @@ void	parse1(char *buff, t_b *b)
 	uint16_t i;
 
 	ft_writefd(buff, b);
+	
 	b->p = ft_strstr(buff, "p1") ? 1 : b->p;
 	b->p = ft_strstr(buff, "p2") ? 2 : b->p;
+	
 	get_next_line(0, &buff);
 	buff +=	8;
 	b->h = ft_atoi(buff);
 	b->w = ft_atoi(ft_strchr(buff, ' '));
+	
 	//dprintf(b->fd,"\nplayer:%hhd |buff: %swidth: %hd |height: %hd\n", b->p, buff, b->w, b->h); // delete it later
 	get_next_line(0, &buff);
 	b->fm = (char **)malloc(sizeof(char *) * b->h);
 	i = -1;
+	
 	while (++i < b->h)
 		b->fm[i] = ft_strnew(b->w);
 	board_set(buff, b);
+	
 	ft_position(b);
 	parse2(buff, b);
 	bestpos_fm(b);
@@ -73,17 +78,17 @@ void	parse2(char *buff, t_b *b)
 		{
 			if(b->piece[i][j] == '*')
 			{
-				b->h_x = i;
-				b->h_y = j;
+				b->p_hi = i;
+				b->p_hj = j;
 				break;
 			}
 		}
 		if(b->piece[i][j] == '*')
 				break;
 	}
-	i = -1;
+	/* i = -1;
 	while(++i < b->p_h) //delete Later
-		dprintf(b->fd,"%s\n", b->piece[i]);
+		dprintf(b->fd,"%s\n", b->piece[i]); */
 }
 
 int				main()
