@@ -6,24 +6,30 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/03 20:32:07 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/05 20:28:28 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "filler.h"
 
-void board_set(char *buff, t_b *b)
+void board_set(t_b *b)
 {
-	uint16_t i;
+	int16_t i;
+	char	*buff;
 
+	if (b->toggle == 0)
+		return ;
+	get_next_line(0, &buff);
+	//ft_strdel(&buff);
+	get_next_line(0, &buff);
+	//ft_strdel(&buff);
 	i = -1;
 	while(++i < b->h)
 	{
 		get_next_line(0, &buff);
-		ft_strcpy(b->fm[i], &(buff[4]));
-		free(buff);
+		//free(b->fm[i] - 4);
+		b->fm[i] = buff + 4;
 	}
-	//ft_printboard(b);
 }
 /*
 ** ft_position give a negative 2 of all the position of my enemie
@@ -32,9 +38,9 @@ void board_set(char *buff, t_b *b)
 */
 void ft_position(t_b *b)
 {
-    uint16_t i;
-    uint16_t j;
-	uint16_t k;
+    int16_t i;
+    int16_t j;
+	int16_t k;
 	
     i = -1;
 	while (++i < b->h)
@@ -56,10 +62,9 @@ void ft_position(t_b *b)
 	while(++k < b->w)
 		fill_board(b, 0, k , k + 1);
 	//ft_printboard(b); //detete it later
-
-	
 }
-void fill_board(t_b *b, int l, int n, int m)
+
+void fill_board(t_b *b, int16_t l, int16_t n, int16_t m)
 {
 	int16_t i;
 	int16_t j;

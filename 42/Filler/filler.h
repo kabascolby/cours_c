@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/03 20:03:13 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/05 18:33:27 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,12 @@ typedef struct	s_board
 	int16_t cur_j;
 	int16_t cur_pi;
 	int16_t cur_pj;
+	int16_t best_k;
+	int16_t best_l;
 
 	int16_t k;
 	int16_t l;
+	int8_t toggle;
 
 	//uint64_t		c ='........';
 	
@@ -70,18 +73,18 @@ typedef struct	s_f
 	t_b		p;
 }				t_f;
 
-void		ft_writefd(char *buff, t_b *b);
-void		parse1(char *buff, t_b *b);
-void		parse2(char *buff, t_b *b);
-void 		board_set(char *buff, t_b *b);
+int			parse1(t_b *b);
+void		parse2(t_b *b);
+void 		board_set(t_b *b);
 void 		ft_position(t_b *b);
 void		ft_printboard(t_b *b);
-void 		fill_board(t_b *b, int l, int n, int m);
+void 		fill_board(t_b *b, int16_t l, int16_t n, int16_t m);
 void		ft_closefd(int *fd); //dellete it later
 void 		bestpos_fm(t_b *b);
 uint16_t	bestpos_piece(t_b *b);
 uint16_t	sumpath(t_b *b);
-int8_t 	index_fail(t_b *b, int16_t x, int16_t y);
+int8_t 		index_fail(t_b *b, int16_t x, int16_t y);
+void 		reset_value(t_b *b);
 
 
 #endif
