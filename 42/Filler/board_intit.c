@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/05 20:28:28 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/07 15:47:14 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void board_set(t_b *b)
 	if (b->toggle == 0)
 		return ;
 	get_next_line(0, &buff);
-	//ft_strdel(&buff);
+	ft_strdel(&buff);
 	get_next_line(0, &buff);
 	//ft_strdel(&buff);
 	i = -1;

@@ -7,3 +7,8 @@ https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html
 /resources/filler_vm -p1 ./lkaba.filler -p2 ./resources/players/abanlin.filler -f ./resources/maps/map00
 
 http://www.zentut.com/c-tutorial/c-read-text-file/
+
+if(b->p == 2 && b->p_h == 15)
+					temp = bestpos_piece2(b);
+				else
+					temp = bestpos_piece(b);
