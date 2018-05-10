@@ -47,7 +47,7 @@
         },
         {
             "name": "Win32",
-        "intelliSenseMode": "clang-x64",
+            "intelliSenseMode": "clang-x64",
             "includePath": [
                 "${workspaceRoot}",
                 "${localappdata}/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState/rootfs/usr/lib/gcc/x86_64-linux-gnu/5/include",
@@ -170,5 +170,5 @@
             }
         }
     ],
-    "version": 3
+    "version": 4
 }

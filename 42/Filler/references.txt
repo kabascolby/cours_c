@@ -9,6 +9,9 @@ https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html
 http://www.zentut.com/c-tutorial/c-read-text-file/
 
 if(b->p == 2 && b->p_h == 15)
-					temp = bestpos_piece2(b);
-				else
-					temp = bestpos_piece(b);
+	temp = bestpos_piece2(b);
+else
+	temp = bestpos_piece(b);
+
+	https://github.com/iburel/new_filler
+	Tkinter

@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/07 15:47:14 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/09 20:00:51 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void board_set(t_b *b)
 	get_next_line(0, &buff);
 	ft_strdel(&buff);
 	get_next_line(0, &buff);
-	//ft_strdel(&buff);
+	ft_strdel(&buff);
 	i = -1;
 	while(++i < b->h)
 	{
 		get_next_line(0, &buff);
-		//free(b->fm[i] - 4);
+		free(b->fm[i] - 4);
 		b->fm[i] = buff + 4;
 	}
 }
@@ -90,12 +90,6 @@ void fill_board(t_b *b, int16_t l, int16_t n, int16_t m)
 	}
 	//ft_printboard(b); //detete it later
 }
-
-/* void init_count(int16_t *T, uint8_t len, int val)
-{
-	while (--len)
-		*T++ = val;
-} */
 
 void ft_printboard(t_b *b)
 {

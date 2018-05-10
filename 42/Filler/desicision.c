@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:05:13 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/07 15:46:52 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/08 16:55:05 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void	bestpos_fm(t_b *b)
 				b->cur_i = i;
 				b->cur_j = j;
 				if(b->p == 2 && b->h == 15)
-					temp = bestpos_piece2(b)/*  > bestpos_piece(b) ? bestpos_piece2(b) : bestpos_piece(b) */;
+					temp = bestpos_piece2(b);
 				else				
 					temp = bestpos_piece2(b) < bestpos_piece(b) ? bestpos_piece2(b) : bestpos_piece(b);
 				if (temp < b->sum)

@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/09 10:54:03 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/05 18:33:27 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/09 18:52:00 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct	s_board
 	uint16_t		p_w;
 	uint16_t		p_h;
 	int fd;
+	char 			*buff;
 	//uint16_t		
 	int8_t	p_hi;
 	int8_t	p_hj;
