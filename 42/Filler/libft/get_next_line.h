@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 08:37:39 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/03 20:51:07 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/12 16:28:07 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # define BUFF_SIZE 1
+
 int	get_next_line(int fd, char **line);
 
 #endif
