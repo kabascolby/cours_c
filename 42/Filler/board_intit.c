@@ -6,7 +6,7 @@
 /*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/26 12:07:49 by lkaba             #+#    #+#             */
-/*   Updated: 2018/05/12 16:24:46 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/05/21 12:26:07 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	board_set(t_b *b)
 ** In that way I can calculateall the possibility I have to reach my enemie.
 */
 
-void	ft_position(t_b *b)
+void	ft_position(t_b	*b)
 {
 	int16_t	i;
 	int16_t	j;

@@ -14,7 +14,7 @@ int		ft_verif_char(char *str, char c, int index)
 	return (1);
 }
 
-void	ft_inter(char *s1, char *s2)
+/* void	ft_inter(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -37,6 +37,30 @@ void	ft_inter(char *s1, char *s2)
 		}
 		i++;
 	}
+} */
+
+
+void ft_inter(char *s1, char *s2)
+{
+	int i;
+	int j;
+
+	i = -1;
+	j = -1;
+
+	int tab[256] = {0};
+
+	while(s1[++i])
+	{
+		 j = -1;
+		while(s2[++j])
+			if(!(tab[(int)s1[i]]) && s1[i] == s2[j])
+			{
+				write(1, &(s1[i]), 1);
+				tab[(int)s1[i]] = 1;
+			}		
+	}
+
 }
 
 int		main(int argc, char **argv)

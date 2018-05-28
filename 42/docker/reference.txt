@@ -1,0 +1,57 @@
+	Ex 00:
+01: https://docs.docker.com/machine/get-started/#create-a-machine
+02: https://docs.docker.com/machine/reference/ip/
+03: https://docs.docker.com/machine/reference/env/
+04: https://docs.docker.com/docker-hub/repos/
+		(remember that env vars need to be set to use the docker command and maybe login)
+05: https://docs.docker.com/engine/reference/run/
+06: https://blog.docker.com/2015/04/tips-for-deploying-nginx-official-image-with-docker/
+		https://docs.docker.com/samples/library/nginx/
+07: https://docs.docker.com/engine/reference/commandline/inspect/#options
+08: https://stackoverflow.com/questions/35689628/starting-a-shell-in-the-docker-alpine-container
+09: 
+10: https://docs.docker.com/storage/volumes/#create-and-manage-volumes
+11: https://severalnines.com/blog/mysql-docker-containers-understanding-basics
+12: https://severalnines.com/blog/mysql-docker-containers-understanding-basics
+		https://docs.docker.com/storage/volumes/#start-a-container-with-a-volume
+		https://dev.mysql.com/doc/refman/5.7/en/environment-variables.html
+13: https://stackoverflow.com/questions/34051747/get-environment-variable-from-docker-container
+14: https://docs.docker.com/samples/library/wordpress/
+		https://dba.stackexchange.com/questions/33447/connect-error-2054-mysql-old-password-issue-still-not-solved
+15: https://hub.docker.com/r/phpmyadmin/phpmyadmin/
+16: 
+17: env variables are already pointing towards Char
+18: 
+19: https://hub.docker.com/_/python/
+20: 
+21: https://docs.docker.com/engine/swarm/
+		https://docs.docker.com/engine/swarm/swarm-tutorial/
+		https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/
+22: https://docs.docker.com/engine/reference/commandline/swarm_join/
+23: https://docs.docker.com/network/overlay/#operations-for-all-overlay-networks
+24: 
+25: https://docs.docker.com/engine/swarm/services/
+26: https://hub.docker.com/r/42school/engineering-bay/
+27: 
+28: https://hub.docker.com/r/42school/marines-squad/
+29: https://docs.docker.com/engine/reference/commandline/service_ps/
+		https://docs.docker.com/engine/reference/commandline/service_ps/#related-commands
+30: https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/
+31: 
+32: 
+33: https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+34: 
+
+DELETE image(docker system prune && docker images prune && docker rmi [name of image])
+
+	Ex 01: 
+00: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+		https://docs.docker.com/engine/reference/builder/
+		https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b
+		docker build -t [name] .
+		After building the container you gotta run (docker run -it [container id])
+01: https://unixblogger.com/2017/11/08/setup-a-teamspeak-3-server-on-linux-ubuntu-debian/
+		docker run --tty -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 --name=test2 team_speaker_container
+02: http://guides.rubyonrails.org/getting_started.html
+		https://hub.docker.com/_/ruby/
+03: 
