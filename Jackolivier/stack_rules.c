@@ -42,11 +42,16 @@ void    *pop(t_stack *stack)
     temp = stack->top;
     content_temporary = temp->content;
     stack->top = stack->top->next;
-    //free(temp);
+    free(temp);
     return(content_temporary);
 }
 
 // peek
+void    *peek(t_stack *stack)
+{
+    if(!is_empty(stack))
+        return(stack->top->content);
+}
 
 int main()
 {
@@ -65,5 +70,6 @@ int main()
     {
         printf("%c", (char)pop(stack));
     }
+
     return (0);
 }

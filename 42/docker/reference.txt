@@ -42,7 +42,7 @@
 33: https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 34: 
 
-DELETE image(docker system prune && docker images prune && docker rmi [name of image])
+DELETE image(docker system prune && docker images prune && docker rmi [name of image])cxva                      
 
 	Ex 01: 
 00: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
@@ -55,3 +55,27 @@ DELETE image(docker system prune && docker images prune && docker rmi [name of i
 02: http://guides.rubyonrails.org/getting_started.html
 		https://hub.docker.com/_/ruby/
 03: 
+
+
+git clone git@github.com:heroku/ruby-rails-sample.git # or clone your own fork
+cd ruby-rails-sample
+bundle
+bundle exec rake bootstrap
+heroku local
+
+gem install bundler
+source 'https://rubygems.org'
+gem 'nokogiri'
+gem 'rack', '~> 2.0.1'
+gem 'rspec'
+bundle install
+$ git add Gemfile Gemfile.lock
+
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+heroku login
+Enter your Heroku credentials.
+Email: adam@example.com
+Password (typing will be hidden):
+Authentication successful.
+docker run -it -p 9987:9987/udp -p 10011:10011 -p 30033:30033 fuck2
