@@ -1,7 +1,7 @@
 #include "list.h"
 #include <unistd.h>
 
-t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
 	int		overflow;
 	t_list	*tmp;

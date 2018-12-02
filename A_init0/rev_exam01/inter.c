@@ -46,7 +46,6 @@ void ft_inter(char *s1, char *s2)
 	int j;
 
 	i = -1;
-	j = -1;
 
 	int tab[256] = {0};
 

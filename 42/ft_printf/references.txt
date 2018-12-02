@@ -4,6 +4,11 @@ https://www.freebsd.org/cgi/man.cgi?query=printf&apropos=0&sektion=3&manpath=Deb
 https://opensource.apple.com/source/xnu/xnu-344/osfmk/kern/printf.c
 
 
+https://stackoverflow.com/questions/10357192/printf-rounding-behavior-for-doubles
+https://linuxgazette.net/144/misc/lg/a_question_of_rounding_in_issue_143.html
+
+
+
 *	Flags	Minimum field Width	.precision Maximum field width	l	Convertion Type*	
 
 flags: # 0 - + _

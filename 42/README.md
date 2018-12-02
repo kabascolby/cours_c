@@ -1,2 +1,0 @@
-# Minishell
-# interview_piscine

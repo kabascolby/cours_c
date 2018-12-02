@@ -30,3 +30,15 @@ https://github.com/agavrel/42-ft_printf.git bonne pratique de printf;
 https://www.notion.so/Starfleet-2cc4eac8acdc4bbd83375e6777af1840 printf documentation
 
 https://medium.com/@vaidehijoshi sorting algorithm
+
+https://github.com/qst0/ft_libgfx Graphic branch;
+
+https://www.haible.de/bruno/documentation/ffcall/callback/callback.html callback implementation in c;
+https://stackoverflow.com/questions/4393716/is-there-a-a-way-to-achieve-closures-in-c;
+https://raw.githubusercontent.com/bk1/sysprogramming-examples/master/akka/c/closure.c
+https://hokstad.com/how-to-implement-closures
+
+
+
+
+https://cvcompiler.com/?upload#  Resume

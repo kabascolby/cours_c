@@ -6,7 +6,7 @@ void	ft_putstr(char *str)
 		write(1, str++, 1);
 }
 
-char	*ft_strcat(char *str, char c)
+char	*ft_charcat(char *str, char c)
 {
 	int i;
 
@@ -35,14 +35,15 @@ void	ft_union(char *s1, char *s2)
 
 	while (*s1)
 	{
-		if (!(ft_strchr(match, *s1)))
-			ft_strcat(match, *s1);
+		if (!(ft_strcarchr(match, *s1)))
+			ft_charcat(match, *s1);
 		s1++;
 	}
+	
 	while (*s2)
 	{
 		if(!(ft_strcarchr(match, *s2)))
-			ft_strcat(match, *s2);
+			ft_charcat(match, *s2);
 		s2++;
 	}
 	ft_putstr(match);

@@ -27,3 +27,15 @@ int main()
 	printf("LCM is %d", lcm);
 	return 0;
 }
+
+unsigned int  hcf(unsigned int a, unsigned int b)
+{
+	if(b == 0)
+		return(a);
+	return(hcf(b, (a%b)));
+}
+
+unsigned int    lcm(unsigned int a, unsigned int b)
+{
+	return((a * b) / hcf(a,b));
+}

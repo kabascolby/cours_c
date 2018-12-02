@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkaba <lkaba@student.42.us.org>            +#+  +:+       +#+        */
+/*   By: lkaba <lkaba@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:09:36 by lkaba             #+#    #+#             */
-/*   Updated: 2017/11/22 16:09:37 by lkaba            ###   ########.fr       */
+/*   Updated: 2018/11/14 14:05:16 by lkaba            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t i;
+	char tmp[len];
 
 	if (len == 0)
 		return (dst);
