@@ -1,0 +1,2 @@
+#!/bin/bash
+docker images -a | grep "" | tail -n+2 | awk '{print $3}' | xargs docker rmi -f

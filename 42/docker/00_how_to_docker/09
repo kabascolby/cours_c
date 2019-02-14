@@ -1,0 +1,6 @@
+#!/bin/bash
+docker run -it --rm debian
+apt-get update -y && apt-get upgrade -y && \
+apt-get install -y build-essential \
+&& apt-get install git-core && \
+apt-get install vim

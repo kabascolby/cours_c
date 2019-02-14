@@ -1,0 +1,48 @@
+#########Remove container
+docker rm -f /overlord
+#########Remove image
+docker rmi nginx
+#######Remove all exited containers https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-contain ps -qers-and-volumes
+######To restart a docker machine
+ docker-machine restart Char
+
+
+
+
+############---03----
+docker rmi nginx
+docker rm/container_name or PID //docker ps to list a--restartll the container
+
+############---06---- https://docs.docker.com/engine/reference/run/#restart-policies---restart
+-d is to detached the process from the terminal;
+we have to create a Docker container who has name overlord and atach the 5000 with the web services nginx
+docker run --name overlord --restart always -p 5000:80 nginx 
+NB: the --restart always will make the server to restart the nginx service diamond even if I stop the command process
+**to view the diamon status : docker inspect overlord --format="{{.HostConfig.RestartPolicy}}"
+docker inspect overlord
+**to stop and delete
+docker stop overlord
+docker rm /overlord
+docker rmi nginx
+
+#######---09-----
+# to run debian  we need this command : docker run -it --rm debian
+apt-get update -y && apt-get upgrade -y && apt-get install -y build-essential && apt-get install git-core && apt-get install vim
+
+##########-----------12----------
+
+#docker inspect spawning-pool
+#docker inspect --format="{{json .Mounts}}" spawning-pool
+#docker exec -it spawning-pool mysql -uroot -p
+#docker inspect spawning-pool | grep "hatchery"
+
+############--------------13-----------
+we have to use the right version of mysql otherwise it's will not work.
+
+##############20------------------------
+docker swarm join \
+    --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+    192.168.99.100:2377
+    docker swarm join \
+>     --token SWMTKN-1-49nj1cmql0jkz5s954yi3oex3nedyz0fb0xx14ie39trti4wxv-8vxv8rssmk743ojnwacrr2e7c \
+>     192.168.99.100:2377

@@ -1,0 +1,2 @@
+#!/bin/bash
+docker service logs -f `docker service ps -q engineering-bay | grep -m1 ""`

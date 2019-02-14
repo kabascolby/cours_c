@@ -1,0 +1,29 @@
+How I got into Microsoft LEAP!
+https://www.youtube.com/watch?v=Seg1vqeb9p0
+
+Abil27/pandoc_resume
+https://github.com/Abil27/pandoc_resume
+http://mszep.github.io/pandoc_resume/
+
+
+Meet Stefanie: From Psychology to Microsoft's LEAP Program - Learn to Code | Code Fellows
+Looking for resources as you learn to code? The Code Fellows blog features helpful
+https://www.codefellows.org/blog/meet-stefanie-from-psychology-to-software-development/
+
+https://www.codingdojo.com/blog/microsoft-leap/
+Coding Dojo Blog
+Six Coding Dojo Alumni Enter the Microsoft LEAP Program - Coding Dojo Blog
+Microsoft selects Coding Dojo alumni to participate in the competitive Microsoft LEAP apprenticeship. Find out what it took to land a spot in the program!
+
+https://blog.sabio.la/sabio-success-david-reflects-on-his-experience-with-the-microsoft-leap-program-1b39e7868893
+Sabio Coding Bootcamp
+Sabio Success: David Reflects on His Experience with the Microsoft LEAP Program
+David L. graduated with Sabio Cohort 16. David arrived at Sabio with an undergraduate degree in Global Studies from UCLA and work experience operating an eCommerce company that sold coffee machines…
+
+
+https://gist.github.com/fvcproductions/8299bfd1f20295c60a2b7a24fed2fcfd
+https://alfapeople.com/insights-inspiration-microsoft-leap-2018/
+AlfaPeople-Global
+Insights and Inspiration from Microsoft LEAP 2018 - AlfaPeople-Global
+AlfaPeople participated in Microsoft LEAP conference earlier this year. The conference is targeted software architects and developers. Lars Lund, Technical Solution Architect, and Ameed Sheikh, Microsoft Dynamics CRM Senior Solution Architect are telling us their most important takeaways from the conference. What were the most important takeaways from Microsoft LEAP 2018? Lars Lund: “It is …
+Mar 9th

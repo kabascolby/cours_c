@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --name lair --link spawning-pool:mysql -e WORD_PRESS_DB_PASSWORD=Kerrigan -p 8080:80 -d wordpress

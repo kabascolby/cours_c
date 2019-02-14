@@ -1,0 +1,6 @@
+FROM alpine:latest
+LABEL maintainer="Lamine kaba laminekaba@outlook.com"
+RUN apk add --update \
+      vim \
+    && rm -fr /var/cache/apk/*
+ENTRYPOINT ["vim"]
