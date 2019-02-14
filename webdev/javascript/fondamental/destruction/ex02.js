@@ -6,7 +6,7 @@ const roomate = {
 	rm5 : 'Potier'
 }
 
-let {rm1 : name1, rm2 : name2} = roomate;
+let {rm1 : name1, rm5: name2} = roomate;
 
 console.log(name1, name2);
 

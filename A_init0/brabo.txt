@@ -42,3 +42,37 @@ https://hokstad.com/how-to-implement-closures
 
 
 https://cvcompiler.com/?upload#  Resume
+
+https://www.freecoursesonline.me/
+https://www.freetutorials.eu/
+
+
+logan https://hexed.it/ for the hexreader
+	cp /var/run/utmpx ~
+
+https://forwardcourses.com/lectures/track/javascript
+
+
+machine learning
+https://developers.google.com/machine-learning/crash-course/ml-intro
+https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
+
+Nicolie a lire
+https://www.codeproject.com/articles/6154/writing-efficient-c-and-c-code-optimization
+
+664713369
+
+https://flaviocopes.com/javascript-promises/
+
+ahloussein
+https://repl.it/
+https://www.awwwards.com/dogstudio/
+https://dribbble.com/
+
+https://www.linkedin.com/in/alexfloresgreer/	leap
+
+https://adventofcode.com/2018/day/1 assarandi
+
+https://b-ok.cc books
+
+https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038
