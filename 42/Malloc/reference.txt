@@ -1,0 +1,6 @@
+Tu peux checker ce livre la partie 9.9.1
+et possiblement avant la partie sur la virtual memory (mais rapidement)
+
+Computer systems- a programmer's perspective.pdf
+
+pour plus avance allocsrv.ps

@@ -60,6 +60,8 @@ https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
 Nicolie a lire
 https://www.codeproject.com/articles/6154/writing-efficient-c-and-c-code-optimization
 
+https://www.youtube.com/channel/UCwd5VFu4KoJNjkWJZMFJGHQ
+
 664713369
 
 https://flaviocopes.com/javascript-promises/
