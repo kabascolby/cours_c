@@ -19,6 +19,18 @@ https://www.youtube.com/watch?v=moQ3Kr8ouiU&index=1&list=PLEH2kL-crMGHdf3J1Na1Gs
 https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_72/rtref/printf.htm
 http://www.cplusplus.com/reference/cstdio/printf/
 
+
+https://opensourceforu.com/2012/02/function-pointers-and-callbacks-in-c-an-odyssey/
+https://stackoverflow.com/questions/4295432/typedef-function-pointer
+https://barrgroup.com/Embedded-Systems/How-To/C-Function-Pointers
+https://stackoverflow.com/questions/4295432/typedef-function-pointer
+https://blog.noctua-software.com/c-tricks.html
+https://embeddedgurus.com/stack-overflow/2010/01/a-tutorial-on-lookup-tables-in-c/
+http://www.newty.de/fpt/intro.html
+http://www.java2s.com/Code/C/Function/Arrayoffunctionpointer.htm
+https://denniskubes.com/2013/03/22/basics-of-function-pointers-in-c/
+
+
 https://github.com/SuperSpyTX/42-CheckYourDorms  dorms extension.
 
 https://github.com/yyang42/ft_exam_guide/tree/master/exercices/inter revoir cela

@@ -13,7 +13,7 @@
 
 function createCircle(radius){
     return {
-        radius,
+        radius, // if the key and the value are the same we can remove the duplication ex: radius : radius => radius,
         draw: function() {
             console.log('draw');
         }
