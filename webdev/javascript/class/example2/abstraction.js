@@ -4,10 +4,11 @@ function Circle(radius){
     let defaultLocation = { x : 1, y : 2}; //defaultLocation is local variable so not accessible from the outside
 
     this.draw = function(){
-        this.getDefaultLocation = function(){
-            return defaultLocation; // this is working because of the the closure of the function getDefaultlocation
-        }
         console.log('draw');
+    }
+    
+    this.getDefaultLocation = function(){
+        return defaultLocation; // this is working because of the the closure of the function getDefaultlocation
     }
 }
 
@@ -36,6 +37,9 @@ function Circle2(radius){
     }
 
     Object.defineProperty(this, 'defaultLocation', {
+        // writable: false,
+        // value: defaultLocation,
+        // enumerable: false,
         get: function() {
             return defaultLocation;
         },
@@ -48,7 +52,15 @@ function Circle2(radius){
 };
 
 let circle2 = new Circle2(8);
-circle2.defaultLocation = 20;
+circle2.defaultLocation.x = 20;
+let keys = Object.keys(circle2);
+console.log(keys);
 
 console.log(circle2.defaultLocation);
+// https://javascriptplayground.com/es5-getters-setters/
+// https://www.hongkiat.com/blog/getters-setters-javascript/
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+
+// to read Later
+// https://derickbailey.com/2015/10/12/hide-the-backing-variable-of-object-propertiesattributes-using-es6-symbols/ 
 
