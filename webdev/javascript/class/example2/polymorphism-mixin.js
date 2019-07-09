@@ -1,6 +1,6 @@
 
-function mixin(target, ...sources){ // we use rest argument ...[] es6 to return the rest
-    Object.assign(target, ...sources); //we use spread operator '...' to expand
+function mixin(target, ...sources){ // we use rest argument ...[] es6 to collect all the args and turn them into an array
+    return Object.assign(target, ...sources); //we use spread operator '...' to expand
 }
 const canEat = {
     eat: function (){
@@ -24,6 +24,6 @@ const canSwin = {
 function Person () {
 
 }
-mixin(person, canEat, canWalk);
+mixin(Person.prototype, canEat, canWalk);
 
-mixin(new Object(Duck), canEat, canWalk, canSwin)
+const duck = mixin({}, canEat, canWalk, canSwin)
