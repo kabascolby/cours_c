@@ -90,3 +90,12 @@ https://adventofcode.com/2018/day/1 assarandi
 https://b-ok.cc books
 
 https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038
+
+ebooks
+https://www.getfreeebooks.com/
+https://avxhm.se/ebooks
+
+https://dream.csac.ca.gov/security/NewApplicant.aspx
+http://ab540.com/
+
+https://exploringjs.com/es6/ch_template-literals.html#sec_tagged-templates-examples

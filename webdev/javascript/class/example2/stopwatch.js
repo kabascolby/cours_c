@@ -7,24 +7,19 @@ function Stopwatch(){
     var state = false;
 
     this.start = function (){
-        if(!state){
-            state = true;
-            timer =  setInterval( function () {
-                currentTime += waitInterval;
-            }, waitInterval);
-        }
-        else
-        throw new Error('Start watch has already started.');
-        
+        if(state)
+            throw new Error('Start watch has already started.');
+        state = true;
+        timer =  setInterval( function () {
+            currentTime += waitInterval;
+        }, waitInterval);        
     }
     
     this.stop = function () {
-        if(state === true){
-            state = false;
-            clearInterval(timer);
-        }
-        else
+        if(!state)
             throw new Error('You have to start  the timer first.');
+        state = false;
+        clearInterval(timer);
         
     }
     
@@ -36,10 +31,12 @@ function Stopwatch(){
 
     Object.defineProperty(this, 'duration', {
         get: function() {
-            console.log(currentTime/1000);
+            return currentTime/1000;
         }
     })
 
 }
 let sw = new Stopwatch();
+
+sw.start();
 
