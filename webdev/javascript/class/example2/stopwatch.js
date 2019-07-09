@@ -3,35 +3,33 @@
 function Stopwatch(){
     var currentTime = 0;
     var waitInterval = 1;
-    var timer;
-    var state = false;
+    var timer = undefined;
 
     this.start = function (){
-        if(state)
+        if(timer)
             throw new Error('Start watch has already started.');
-        state = true;
         timer =  setInterval( function () {
             currentTime += waitInterval;
         }, waitInterval);        
     }
     
     this.stop = function () {
-        if(!state)
+        if(!timer)
             throw new Error('You have to start  the timer first.');
-        state = false;
         clearInterval(timer);
+        timer = undefined;
         
     }
     
     this.reset = function () {
         clearInterval(timer);
-        state = false;
+        timer = false;
         currentTime = 0;
     }
 
     Object.defineProperty(this, 'duration', {
         get: function() {
-            return currentTime/1000;
+            return parseFloat(currentTime/1000);
         }
     })
 
