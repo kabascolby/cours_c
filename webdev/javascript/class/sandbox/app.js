@@ -26,22 +26,29 @@ class Car {
 	}
 } 
 
-let brand =  {
-	brand,
-	model,
-	year
+let mixin =  function (obj) {
+	return Object.assign(obj, {
+		brand: brand,
+		model: model,
+		year: year || 1997
+	});
 }
 
-let carMixin = {
-	__proto__ : brand,
-}
+
+// function mixin(cls, ...src){
+// 	for (let cl of src){
+// 		console.log('keys cl', Object.keys(cl))
+// 		for (let key of Object.keys(cl)){
+// 			cls.prototype[key] = cl[key];
+// 		}
+// 	}
+// }
 //extend a class
 
 class SUV extends Car {
 	constructor(doors, engine, colors, brand, model, year) {
-		super(doors, engine, colors);
-		this.brand = brand;
-		// Object.assign(this, carMixin);
+		super(doors, engine, colors, brand, model, year);
+		mixin(this);
 	}
 	carStats(){ //here we redefining a carStats method and assign to the SUV constructor
 		// console.log(super.carStats()); here we are Calling the first carStats methods from the Car constructor
@@ -50,6 +57,7 @@ class SUV extends Car {
 }
 
 
+let c = new SUV(4, "v4", "red", "peogeot", "106", 1997)
 //Mixin
 
 
@@ -63,4 +71,4 @@ console.log(Car.totalDoors(new Car(4, 'v5', 'grey'), new Car(2, 'v5', 'white')))
 
 let bmw = Car.createCar('{"engine" : "v4", "doors" : 4 , "colors" : "red"}');
 console.log(bmw.carStats());
-let c = new SUV(4, "v4", "red", "peogeot"); 
+// let c = new SUV(4, "v4", "red", "peogeot"); 
