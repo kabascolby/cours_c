@@ -5,3 +5,5 @@ A_init0/readcom
 .vscode/c_cpp_properties.json
 .vscode/settings.json
 .vscode
+._.DS_Store
+._*
