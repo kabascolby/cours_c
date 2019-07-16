@@ -18,7 +18,6 @@ function Stopwatch(){
             throw new Error('You have to start  the timer first.');
         clearInterval(timer);
         timer = undefined;
-        
     }
     
     this.reset = function () {
@@ -37,4 +36,3 @@ function Stopwatch(){
 let sw = new Stopwatch();
 
 sw.start();
-

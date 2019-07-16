@@ -48,7 +48,7 @@ function extend(Child, Parent){
 }
 
 function Circle(radius, color){
-    Shape.call(this, color); //super Constructor
+    Shape.call(this, color); //super Constructor (same implementation like super with class)
     this.radius = radius;
 }
 extend(Circle, Shape);

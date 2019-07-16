@@ -54,7 +54,6 @@ Stopwatch.prototype.reset = function () {
     let timer = undefined;
     let currentTime = 0;
     function Stopwatch(){
-    
         Object.defineProperty(this, 'duration', {
             get: function () {
                 return currentTime / 1000;
