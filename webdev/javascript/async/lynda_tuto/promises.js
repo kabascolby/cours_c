@@ -3,7 +3,7 @@ document.body.innerHTML = `<h1 align="center" >I understand Async</h1>
 width:250px; height:250px; padding:0px 10px;
 border-radius: 15px 50px 30px;
 background-size: cover;
-color: #900202;">
+font-family: 'arial';">
 <h2 style="color:#000000;margin:0">Weather</h2>
 <hr color=#6579c6>
 </div>`;
@@ -15,7 +15,7 @@ function get(url) {
             if(httpRequest.status === 200){
                 resolve(httpRequest.responseText);
             } else {
-                reject(Error(httpRequest.status))  ;
+                reject(Error(httpRequest.status));
             }
         };
 
@@ -36,9 +36,8 @@ function successHandler(data) {
     console.log(dataObj);
     const div = document.getElementById('weather');
     div.insertAdjacentHTML('beforeend', `
-    <h3>${dataObj.name}:  ${tempToF(dataObj.main.temp).toFixed(2)}</h3>
+    <h5 margin="0">${dataObj.name}:  ${tempToF(dataObj.main.temp).toFixed(2)}&deg;<em>${dataObj.weather[0].description}</em></h5>
     `);
-    return div;
     // https://stackoverflow.com/questions/5677799/how-to-append-data-to-div-using-javascript
 }
 
@@ -50,16 +49,30 @@ function failHandler(status) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const apiKey = '0aa80cd9b32b5a4ea06aa5228f65e230';
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=fremont&APPID='+ apiKey;
-    get(url)
-        .then(function(response) {
-            successHandler(response);
+    // const url = 'https://api.openweathermap.org/data/2.5/weather?q=fremont&APPID='+ apiKey;
+    const locations = [
+        'fremont,us',
+        'los+angeles,us',
+        'san+francisco,us',
+        'lone+pine,us',             //near to Mount Whitney
+        'mariposa,us' //near to Yosemiti Park
+    ];
+
+    const urls = locations.map( location =>`https://api.openweathermap.org/data/2.5/weather?q=
+    ${location}&APPID=${apiKey}`);
+
+    Promise.all([get(urls[0]), get(urls[1]), get(urls[2]), get(urls[3]), get(urls[4])])
+        .then(function(responses) {
+            return responses.map(response => successHandler(response));
         })
+        // .then(function(literals){
+        //     // console.log(literals);
+        // })
         .catch(function(status) {
             failHandler(status);
         })
         .finally(function() {
             let weatherid = document.getElementById("weather");
-            weatherid.insertAdjacentHTML('afterend', `<p align="right"><em>@lamine kaba</em></p>`)
+            weatherid.insertAdjacentHTML('afterend', `<p align="left"><em>@lamine kaba</em></p>`)
         });
 });
