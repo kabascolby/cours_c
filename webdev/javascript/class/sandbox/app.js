@@ -64,7 +64,7 @@ let c = new SUV(4, "v4", "red", "peogeot", "106", 1997)
 let cx5 = new Car(4, 'v5', 'grey');
 
 console.log(cx5)
-
+                                                    
 console.log(cx5.carStats());
 
 console.log(Car.totalDoors(new Car(4, 'v5', 'grey'), new Car(2, 'v5', 'white')));
