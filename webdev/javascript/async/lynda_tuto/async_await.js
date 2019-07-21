@@ -62,17 +62,37 @@ document.addEventListener('DOMContentLoaded', function () {
 	${location}&APPID=${apiKey}`);
 	const weatherid = document.getElementById('weather');
 	
-	Promise.all([get(urls[0]), get(urls[1]), get(urls[2]), get(urls[3]), get(urls[4])])
-	.then(function (responses) {
-		return responses.map(response => successHandler(response));
-	})
-	.then(function(literals){
-		literals.forEach(element => weatherid.insertAdjacentHTML('beforeend', element))
-	})
-	.catch(function (status) {
-		failHandler(status);
-	})
-	.finally(function () {
-		weatherid.insertAdjacentHTML('afterend', `<p align="left"><em>@lamine kaba</em></p>`)
-	});
+	// Promise.all([get(urls[0]), get(urls[1]), get(urls[2]), get(urls[3]), get(urls[4])])
+	// .then(function (responses) {
+	// 	return responses.map(response => successHandler(response));
+	// })
+	// .then(function(literals){
+	// 	literals.forEach(element => weatherid.insertAdjacentHTML('beforeend', element))
+	// })
+	// .catch(function (status) {
+	// 	failHandler(status);
+	// })
+	// .finally(function () {
+		// });
+		
+		(async function() {
+			try {
+				let responses = [];
+				responses.push(await get(urls[0]));
+				responses.push(await get(urls[1]));
+				responses.push(await get(urls[2]));
+				responses.push(await get(urls[3]));
+				responses.push(await get(urls[4]));
+			let literals = responses.map(function(response) {
+				return successHandler(response);
+			});
+			document.getElementById('weather').insertAdjacentHTML('beforeend', literals.join(''));
+		}
+		catch(status) {
+			failHandler(status);
+		}
+		finally {
+			weatherid.insertAdjacentHTML('afterend', `<p align="left"><em>@lamine kaba</em></p>`)
+		}
+	})();
 });
