@@ -8,7 +8,7 @@ A_init0/readcom
 ._.DS_Store
 ._*
 # dependencies
-/node_modules
+node_modules/
 
 # testing
 /coverage
