@@ -102,3 +102,5 @@ https://exploringjs.com/es6/ch_template-literals.html#sec_tagged-templates-examp
 
 https://docs.microsoft.com/en-us/learn/browse/
 https://docs.microsoft.com/en-us/learn/modules/assess-your-development-process/3-release-process
+
+https://free-for.dev/#/ free dev tools
